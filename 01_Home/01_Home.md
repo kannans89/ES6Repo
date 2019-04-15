@@ -16,5 +16,4 @@ An understanding of JavaScript programming concepts is necessary for this course
  1. https://stackoverflow.com/questions/4269150/what-is-ecmascript
  2. https://en.wikipedia.org/wiki/ECMAScript
 
-
  -->
