@@ -15,7 +15,7 @@ There are nine editions of ECMA-262  at the time of writing this course .
 | 1 | ECMAScript 1 |  First Edition released in 1997   |
 | 2 | ECMAScript 2 |  Second Edition released in 1998,minor changes to meet ISO/IEC 16262 standard   |
 | 3 | ECMAScript 3|  Third Edition released in 1999 with language enhancements |
-| 4 | ECMAScript 4|  Fourth Edition release plan was dropped,few features added in ES6 & other complex features dropped |
+| 4 | ECMAScript 4|  Fourth Edition release plan was dropped,few features added later in ES6 & other complex features dropped |
 | 5 | ECMAScript 5|  Fifth Edition released in 2009|
 | 5.1 | ECMAScript 5.1|  5.1 Edition released in 2011 ,minor changes to meet ISO/IEC 16262:2011 standard|
 | 6 | ECMAScript 2015/ES6|  Sixth Edition released in 2015 , see ES6 chapters for new features|
