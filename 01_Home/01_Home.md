@@ -1,12 +1,12 @@
 # Home
 
-ECMAScript is a standard for scripting languages like JavaScript,ActionScript,JScript.It was initially created to standardize JavaScript , which remains the most popular implementation of ECMAScript.
+ECMAScript (or ES) is a standard for scripting languages like JavaScript,ActionScript and JScript.It was initially created to standardize JavaScript , which is the most popular implementation of ECMAScript.
 
-This tutorial adopts a simple and practical approach through JavaScript to describe the new features in ECMAScript 2015 (ES6),ECMAScript 2016 (ES7),ECMAScript 2017(ES8),ECMAScript 2018(ES9).
+This tutorial adopts a simple and practical approach through JavaScript to describe the new features in ECMAScript 2015 (ES6),ECMAScript 2016 (ES7),ECMAScript 2017(ES8) and ECMAScript 2018(ES9).
 
 ## Audience
 
-This tutorial has been prepared for students who have already worked in JavaScript
+This tutorial has been prepared for programmers who have already worked with JavaScript.
 
 ### Prerequisites
 

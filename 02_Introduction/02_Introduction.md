@@ -1,10 +1,10 @@
 # Introduction
 
-Brendan Eich engineer at Netscape created  JavaScript programming language.Netscape later presented JavaScript to Ecma International, which develops standards and it was renamed to ECMA-262 popularly known as ECMAScript.
+Brendan Eich,engineer at Netscape ,created  JavaScript programming language.Netscape later presented JavaScript to Ecma International, which develops standards and it was renamed to ECMA-262 popularly known as ECMAScript.
 
 ## Why ECMAScript
 
-ECMAScript is commonly used for client-side scripting on web based applications.Today it is increasingly being used for writing server side applications and services using Node.js.
+ECMAScript is commonly used for client-side scripting in web applications.Today it is increasingly being used for writing server-side applications and web services running on NodeJS.
 
 ## ECMAScript Versions
 
