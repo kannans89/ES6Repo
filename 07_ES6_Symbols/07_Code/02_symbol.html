@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <script>
+      const userId = Symbol.for('userId') // creates a new Symbol in registry
+      const user_Id = Symbol.for('userId') // reuses already created Symbol
+
+      console.log(userId == user_Id)
+
+      const studentId = Symbol("studentID") // symbol not in registry
+      const student_Id = Symbol.for("studentID")//symbol in registry
+
+      console.log(studentId == student_Id)
+    </script> -->
+    
+  <script>
+    
+     const user_Id = Symbol.for('userId') // creates a new Symbol in registry
+     console.log(Symbol.keyFor(user_Id)) // returns the key of a symbol in registry
+
+     const userId = Symbol("userId")// symbol not in registry
+     console.log(Symbol.keyFor(userId)) //userId symbol is not in registry
+    
+    </script> 
+
+
+
+</body>
+</html>
