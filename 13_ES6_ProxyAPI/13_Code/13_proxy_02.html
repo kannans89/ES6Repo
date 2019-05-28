@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         class Student{
+          constructor(firstName,lastName){
+              this.firstName = firstName
+              this.lastName = lastName
+          }
+
+          get fullName(){
+              return `${this.firstName} : ${this.lastName}`
+          }
+      }
+
+      const handler = {
+          construct:function(target,args){
+              console.log("inside construct")
+              return Reflect.construct(target,args);
+          }
+      }
+
+    const StudentProxy = new Proxy(Student,handler)
+    const s1 = new StudentProxy('kannan','sudhakaran')
+    console.log(s1.fullName)
+    const s2 = new StudentProxy('Tutorials','Point')
+    console.log(s2.fullName)
+
+
+    </script>
+
+</body>
+</html>

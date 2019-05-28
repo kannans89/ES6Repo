@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         class Student{
+          constructor(firstName,lastName){
+              this.firstName = firstName
+              this.lastName = lastName
+          }
+
+          get fullName(){
+              return `${this.firstName} : ${this.lastName}`
+          }
+      }
+
+      const handler = {
+       
+
+          has: function(target,property){
+              console.log('inside has')
+             return Reflect.has(target,property)
+               
+          }
+      }
+
+       const s1 = new Student("Tutorials","Point")
+       const proxy = new Proxy(s1,handler)
+       console.log('fullName' in proxy)
+       console.log('fullname' in proxy)
+       console.log('firstName' in proxy)
+      
+
+    </script>
+
+</body>
+</html>

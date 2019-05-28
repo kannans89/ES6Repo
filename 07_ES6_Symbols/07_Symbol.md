@@ -76,28 +76,65 @@ true
 false
 ```
 
-
 ### Example 2:Symbol.keyFor
-
-
 
 ```html
   <script>
-    
      const user_Id = Symbol.for('userId') // creates a new Symbol in registry
      console.log(Symbol.keyFor(user_Id)) // returns the key of a symbol in registry
 
      const userId = Symbol("userId")// symbol not in registry
      console.log(Symbol.keyFor(userId)) //userId symbol is not in registry
-    
-    </script> 
-
+    </script>
 
 ```
 
-output is 
+output is below
 
 ```js
 userId
 undefined
 ```
+
+### Symbol & class
+
+Symbol can be used with class  to define the property name of the class.
+The advantage is that if property is a symbol as shown below, outside the package property can be accessed only if symbol names is known. So data is much encapsulated when symbols are used as properties.
+
+```html
+<script>
+    const COLOR = Symbol()
+    const MODEL = Symbol()
+    const MAKE = Symbol()
+
+    class Bike {
+        constructor(color ,make,model){
+            this[COLOR] = color;
+            this[MAKE] = make;
+            this[MODEL] = model;
+        }
+
+    }
+
+ let bike  = new Bike('red','honda','cbr')
+ console.log(bike)
+
+ //property can be accessed ony if symbol name is known
+ console.log(bike[COLOR])
+</script>
+
+```
+
+output is shown below
+
+```js
+Bike {Symbol(): "red", Symbol(): "honda", Symbol(): "cbr"}
+Symbol(): "red"
+Symbol(): "honda"
+Symbol(): "cbr"
+
+red
+
+```
+
+Since the object keys are of the Symbol type it becomes difficult to access the object properties outside package .

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+     class Student {
+         constructor(rollno,firstName,lastName){
+             this.rollno = rollno
+             this.firstName = firstName
+             this.lastName = lastName
+             console.log('inside constructor')
+         }
+
+         fullName(){
+             return this.firstName + " - "+this.lastName
+         }
+     }
+     let s1 = new Student(101,'Mohammed','Mohtashim')
+     console.log(s1.fullName())
+
+     let s2 = new Student(102,'John','Doe')
+     console.log(s2.fullName())
+     
+    </script>
+</body>
+</html>
