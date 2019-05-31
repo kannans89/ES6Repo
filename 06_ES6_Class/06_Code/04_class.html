@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+     //static class
+
+     class MathOperations {
+
+         static cubeEven(no){
+             if(MathOperations.isEven(no))
+             return no*no*no
+             else throw "NOT_EVEN_NO"
+
+ 
+         }
+
+         static isEven(no){
+              return (no%2==0)
+         }
+
+         static round(no){
+             let decimalPoint = no%1;
+
+             if(decimalPoint>=.5)
+             return no+(1-decimalPoint)
+             else
+                return no-decimalPoint;
+         }
+     }
+    
+    console.log(MathOperations.round(10.5))
+    console.log(MathOperations.round(10.4))
+    console.log(MathOperations.cubeEven(2))
+    console.log(MathOperations.isEven(2))
+
+     
+    </script>
+</body>
+</html>

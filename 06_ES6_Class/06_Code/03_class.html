@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+     //setter and getter
+
+     class Student {
+         constructor(rollno,firstName,lastName){
+             this._rollno = rollno
+             this._firstName = firstName
+             this._lastName = lastName
+             console.log('inside constructor')
+         }
+
+         get fullName(){
+              console.log('inside getter')
+             return this._firstName + " - "+this._lastName
+         }
+         set rollno(newRollno){
+             console.log("inside setter")
+             this._rollno = newRollno
+         }
+     }
+     
+     let s1 = new Student(101,'Sachin','Tendulkar')
+     console.log(s1)
+     console.log(s1.fullName)
+     s1.rollno = 201
+     console.log(s1)
+     
+    </script>
+</body>
+</html>
