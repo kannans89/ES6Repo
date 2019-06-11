@@ -8,7 +8,68 @@
 </head>
 <body>
     
-    <script>
+  <script>
+   let student = {
+       rollno:20,
+       name:'Prijin',
+       cgpa:7.2
+   }
+  
+  let {name,cgpa} = student
+
+  console.log(name)
+  console.log(cgpa)
+
+ //destrcutre to different name
+
+ let {name:student_name,cgpa:student_cgpa}=student
+ console.log(student_cgpa)
+ console.log("student_name",student_name)
+
+
+  //syntax : assign to already declared variable 
+  let rollno;
+   ({rollno} = student)
+   console.log(rollno)
+
+  // assign default values to variables 
+
+  let product ={ id:1001,price:2000}
+  let {id,price,discount=.10} = product
+  console.log(id)
+  console.log(price)
+  console.log(discount)
+
+  // rest operator with object destructuring
+
+   let customers= {
+       c1:101,
+       c2:102,
+       c3:103
+   }
+
+  let {c1,...others} = customers
+  console.log(c1)
+  console.log(others)
+
+  //nested objects
+  let emp = {
+       id:101,
+       address:{
+           city:'Mumbai',
+           pin:1234
+       }
+  }
+
+let {address} = emp;
+console.log(address)
+
+let {address:{city,pin}} = emp
+console.log(city)
+
+  </script>
+
+    <!-- <script>
      
      let names = ['Mohtashim','Kannan','Kiran']
      let [n1,n2,n3] = names;
@@ -36,6 +97,6 @@
      console.log("first is ",first) //20
 
 
-    </script>
+    </script> -->
 </body>
 </html>
