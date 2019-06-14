@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //octal in ES5
+        // octal nos are from 0 to 7
+        // convert  1057 base 8 to decimal
+        /*
+====================================================
+        1	0	5	7 (base 8 0->7)
+        001	000	101	111 ( only 3 binary digits)
+        then to hexadecimal:(base 16 0 to 15)
+        0010	0010	1111 (so 4 binary digits)
+        2	2	F
+====================================================
+        https://en.wikipedia.org/wiki/Octal
+        step1: check which base to convert base 16 (hex 0 to 15 (need 4 binary))
+        step2: check which base to convert base 8 (octal 0 to 7(need 3 binary digits))
+      */
+     //https://www.binaryhexconverter.com/decimal-to-octal-converter
+        var old_octal_style = 010 //octal base 8
+        console.log(old_octal_style) // decimal base 10
+
+
+        //octal in ES6
+
+         let  new_octal_style = 0o10;// octal
+         console.log(new_octal_style)
+
+         //Binary literals
+         var old_binary_parsing = parseInt('11',2)
+         console.log(old_binary_parsing) //evaluates to 3
+
+         //binary in es6
+         let new_binary = 0b11//binary base 2
+         console.log(new_binary); // decimal base 10
+ 
+    </script>
+</body>
+</html>

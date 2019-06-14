@@ -12,7 +12,6 @@
 
 ```html
  <script>
-        
         let firstName='Tutorials',lastName='Point'
 
         let company={
