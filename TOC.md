@@ -42,4 +42,4 @@
 2. Rest/Spread Properties
 3. Promise:finally()
 4. Template Literal Revision
-5. Regular Expression features
+5. Regular Expression feature

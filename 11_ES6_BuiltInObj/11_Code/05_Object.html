@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+         //Object.is()
+
+         let emp1 ={ename:'Prijin'}
+         let emp2 ={ename:'Prijin'}
+
+         console.log(Object.is(emp1.ename,emp2.ename))
+
+        //Object.setPrototypeOf(destination,source)
+        let emp ={name:'A',location:'Mumbai',basic:5000}
+        let mgr = {name:'B'}
+        console.log(emp.__proto__ == Object.prototype)
+        console.log(mgr.__proto__ == Object.prototype)
+        console.log(mgr.__proto__ ===emp.__proto__)
+
+        Object.setPrototypeOf(mgr,emp)
+        console.log(mgr.__proto__ == Object.prototype) //false
+        console.log(mgr.__proto__ === emp)
+        console.log(mgr.location,mgr.basic)
+       
+        //Object.assign()
+        let obj1 ={x:10},
+            obj2={y:20},
+            obj3={z:30}
+        
+        Object.assign(obj1,obj2,obj3)
+        console.log("obj 1",obj1)
+
+    </script>
+</body>
+</html>

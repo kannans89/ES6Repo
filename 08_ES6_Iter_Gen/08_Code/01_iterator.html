@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+         //user defined iterable
+        class CustomerList {
+               constructor(customers){
+                   this.customers = [].concat(customers)
+               }
+
+               [Symbol.iterator](){
+                   let count=0;
+                   let customers = this.customers
+                   return {
+                       next:function(){
+                           let customerVal = customers[count];
+                           count+=1;
+                           if(count<=customers.length){
+                               return {
+                                   value:customerVal,
+                                   done:false
+                               }
+                           }
+                           return {done:true}
+
+                       }
+                   }
+               }
+
+        }
+
+        let customersObj = new CustomerList([{
+            firstName:'A'
+        },{
+          firstName:'B'
+        },{
+          firstName:'C'
+        }]);
+
+        for(let c of customersObj){
+           console.log(c)
+        }
+
+        let iter = customersObj[Symbol.iterator]();
+        console.log(iter.next())
+        console.log(iter.next())
+        console.log(iter.next())
+        console.log(iter.next())
+
+        /*
+         let marks = [10,20,30]
+              
+         //check iterable using for..of
+         for(let m of marks){
+             console.log(m);
+         }
+        //retrieve iterator
+
+        let iter = marks[Symbol.iterator]();
+        console.log(iter.toString())
+        console.log(iter.next()) // value and done
+        console.log(iter.next())
+        console.log(iter.next())
+        console.log(iter.next())
+
+        */
+        
+    </script>
+</body>
+</html>
