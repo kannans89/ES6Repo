@@ -2,8 +2,18 @@
 
 ## Exponentiation Operator
 
-It is represented by double asterisk `**`.It has same purpose as `Math.pow`
-method.
+ES7 introduces a new mathematical operator called exponentiation operator.  This operator is similar to using `Math.pow` method. Exponentiation operator is represented by a double asterisk `**`. The operator can be used only with numeric values. The syntax for using the exponentiation operator is given below: 
+
+### Syntax
+
+```
+
+base_value ** exponent_value
+
+```
+
+### Illustration
+The following example calculates the exponent of a number using the `Math.pow` method and the exponentiation operator. 
 
 ```html
   <script>
@@ -12,12 +22,12 @@ method.
      let exponent = 3
      console.log('using Math.pow()',Math.pow(base,exponent))
      console.log('using exponentiation operator',base**exponent)
-
     
-    </script>
+  </script>
 
 ```
-output is shown below
+
+Output of the above snippet is as given  below
 
 ```js
 using Math.pow() 8
@@ -26,8 +36,25 @@ using exponentiation operator 8
 
 ## Array Includes
 
-This method `Array.includes()` in ES7 helps to check if an element is available in an array.In earlier version we could check using `indexof` method of array. This returns `-1` if no data found , else returns the index of the first occurance of element in the array.
+The `Array.includes()` method is introduced in ES7 helps to check if an element is available in an array.Prior to ES7, the `indexof` method of the Array class could be used to verify if a value exists in an array . The `indexof` returns the index of the first occurance of element in the array if the data is found ,else returns `-1` if the data doesn't exist.
 
+The `Array.includes()` method accepts a parameter, checks if the value passed as parameter exists in the array. This method returns `true` if the value is found ,else returns `false` if the value doesn't exist.  The syntax for using the `Array.includes` method is given below: 
+
+### Syntax
+
+```
+Array.includes(value)
+```
+
+OR
+
+```
+Array.includes(value,start_index)
+```
+The second syntax checks if the value exists from the index specified. 
+
+### Illustration
+The following example declares an array  `marks` and uses the `Array.includes` method to verify if a value is present in the array. 
 
 ```html
  <script>
@@ -61,3 +88,13 @@ This method `Array.includes()` in ES7 helps to check if an element is available 
 
 </script>
 ```
+Output of the above code snippet is given below- 
+
+--insert output here---
+
+
+```
+found element in array
+could not find element
+```
+
