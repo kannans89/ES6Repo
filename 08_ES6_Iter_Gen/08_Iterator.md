@@ -64,8 +64,11 @@ Output of the above code will be:
 
 ## Custom Iterable
 
+Certain types in Javascript are iterable (E.g. Array, Map etc. ) while others are not (E.g. Class).Javascript types which are not iterable by default can be iterated by using the iterable protocol.
 
-In this example we are creating a class `CustomerList` which can be iterated using a `for of ` loop.The constructor of the class takes an array of customer objects. To convert this class to iterable it should implment function whose key is `[Symbol.iterator]`  as shown below.This function returns an iterator object.The iterator object has a function `next` which returns an object `{value:'someValue',done:true/false}`
+The following example defines a class named `CustomerList` which stores multiple customer objects as an array.Each customer object has firstName and lastName properties.
+
+To make this class iterable, the class must implement `[Symbol.iterator]()` function. This function returns an iterator object.The iterator object has a function `next` which returns an object `{value:'customer',done:true/false}`.
 
 ```html
 
@@ -74,13 +77,17 @@ In this example we are creating a class `CustomerList` which can be iterated usi
          //user defined iterable
         class CustomerList {
                constructor(customers){
+                   //adding customer objects to an array
                    this.customers = [].concat(customers)
                }
+
+               //implement iterator function
                [Symbol.iterator](){
                    let count=0;
                    let customers = this.customers
                    return {
                        next:function(){
+                        //retrieving a customer object from the array
                            let customerVal = customers[count];
                            count+=1;
                            if(count<=customers.length){
@@ -89,11 +96,15 @@ In this example we are creating a class `CustomerList` which can be iterated usi
                                    done:false
                                }
                            }
+                           //return true if all customer objects are iterated
                            return {done:true}
                        }
                    }
                }
         }
+
+        //create customer objects
+
         let c1={
             firstName:'Sachin',
             lastName:'Tendulkar'
@@ -102,19 +113,24 @@ In this example we are creating a class `CustomerList` which can be iterated usi
             firstName:'Rahul',
             lastName:'Dravid'
         }
+
+        //define a customer array and initialize it
        let customers=[c1,c2]
+
+       //pass customers to the class' constructor
         let customersObj = new CustomerList(customers);
+        //iterating using for..of
         for(let c of customersObj){
            console.log(c)
         }
+        //iterating using the next() method
         let iter = customersObj[Symbol.iterator]();
         console.log(iter.next())
         console.log(iter.next())
         console.log(iter.next())
-       
 ```
 
-Output is shown :
+Output will be as shown below :
 
 ```js
 
@@ -139,49 +155,69 @@ Output is shown :
 ```
 
 ## Generator
+Prior to ES6,functions in Javascript followed a run-to completion model.
+ES6 introduces functions known as Generator which can stop midway and then continue from where it stopped.
 
-Gererator is a function which returns an iterator.Generator is a function which can stop midway and then continue from where it stopeed.It can generate a series of values.
+A generator prefixes the function name with an asterisk `*` character and contains one or more `yield` statements.The `yield` keyword returns an iterator object.
 
-A generator function has an asterik `*` character . The `*` shows the funciton return a generator object.The generator function uses the `yield` keyword.The yield keyword returns an iterator object with two properties , first value and second one  {value:'',done:true}
+**Syntax**
+```js
+function * generator_name()
+{
+yield value1
+    ...
+yield valueN
+}
+```
+### Illustration
+The example defines a generator function `getMarks` with three yield statements.Unlike normal functions, the generator function `getMarks()`,when invoked,doesn't execute the function but returns an iterator object that helps you to execute code inside the generator function.
 
-
-Example 1: The example shows a generator function `getMarks` which returns 10 in first iteration , 20 in second iteration and 30 in third.Since the generator function returns an iterator , we could call the `next()` method also as shown below.
+On the first call to `markIter.next()` operations in the beginning would run and the yield statement pauses the execution of the generator. Subsequent calls to the `markIter.next()` will resume the generator function until the next `yield` expression.
 
 ```html
  <script>
+     //define generator function
   function * getMarks(){
+           console.log("Step 1")
            yield 10
+           console.log("Step 2")
            yield 20
+           console.log("Step 3")
            yield 30
-       }    
-
-       let markIter = getMarks()
-       for(let m of markIter){
-           console.log(m)
+           console.log("End of function")
        }
-       //iterate using next() method
-        markIter = getMarks();
+
+    //return an iterator object
+       let markIter = getMarks()
+    //invoke statements until first yield
        console.log(markIter.next())
+    //resume execution after the last yield until second yield expression
        console.log(markIter.next())
+    //resume execution after last yield until third yield expression 
        console.log(markIter.next())
-       console.log(markIter.next()) //iteration is over so no value
+
+       console.log(markIter.next()) // iteration is completed;no value is returned
  </script>
 ```
 
-output:
+Output:
 
 ```js
-10
-20
-30
+Step 1
 {value: 10, done: false}
+Step 2
 {value: 20, done: false}
+Step 3
 {value: 30, done: false}
+End of function
 {value: undefined, done: true}
 ```
 
-Example 2: Here we create an infinite sequence of even numbers through `* evenNumberGenerator` generator function.We can iterate through all even numbers through `next()` or using `for of` loop as shown below.
+### Illustration 2
 
+The following example creates an infinite sequence of even numbers through `* evenNumberGenerator` generator function.
+
+We can iterate through all even numbers by using `next()` or using `for of` loop as shown below.
 
 ```html
  <script>
@@ -191,7 +227,7 @@ Example 2: Here we create an infinite sequence of even numbers through `* evenNu
             while(true){
                 num+=2
                 yield num
-               
+
             }
 
        }
@@ -200,7 +236,7 @@ Example 2: Here we create an infinite sequence of even numbers through `* evenNu
        let iter = evenNumberGenerator();
        console.log(iter.next())
        console.log(iter.next())
-       
+
        //using for of to iterate till 12
        for(let n of evenNumberGenerator()){
            if(n==12)break;
@@ -211,7 +247,7 @@ Example 2: Here we create an infinite sequence of even numbers through `* evenNu
 
 ```
 
-output:
+Output of the above code will be-
 
 ```js
 {value: 2, done: false}
