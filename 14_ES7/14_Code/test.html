@@ -1,0 +1,33 @@
+<script>
+
+let marks = [50,60,70,80]
+
+if(marks.includes(50)){
+       console.log('found element in array')
+   }else{
+       console.log('could not find element')
+   }
+
+ if(marks.includes(50,1)){ //search from index 1
+       console.log('found element in array')
+   }else{
+       console.log('could not find element')
+   }
+
+
+   console.log([NaN].includes(NaN))
+
+   //check object is available in array
+   let user1 = {name:'kannan'},
+    user2 = {name:'varun'},
+    user3={name:'prijin'}
+
+    let users = [user1,user2]
+    console.log(users.includes(user1))
+    console.log(users.includes(user3))
+
+
+
+
+
+</script>

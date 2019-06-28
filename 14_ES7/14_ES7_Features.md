@@ -2,7 +2,7 @@
 
 ## Exponentiation Operator
 
-ES7 introduces a new mathematical operator called exponentiation operator.  This operator is similar to using `Math.pow` method. Exponentiation operator is represented by a double asterisk `**`. The operator can be used only with numeric values. The syntax for using the exponentiation operator is given below: 
+ES7 introduces a new mathematical operator called exponentiation operator. This operator is similar to using `Math.pow` method. Exponentiation operator is represented by a double asterisk `**`. The operator can be used only with numeric values. The syntax for using the exponentiation operator is given below:
 
 ### Syntax
 
@@ -13,6 +13,7 @@ base_value ** exponent_value
 ```
 
 ### Illustration
+
 The following example calculates the exponent of a number using the `Math.pow` method and the exponentiation operator. 
 
 ```html
@@ -54,47 +55,51 @@ Array.includes(value,start_index)
 The second syntax checks if the value exists from the index specified. 
 
 ### Illustration
+
 The following example declares an array  `marks` and uses the `Array.includes` method to verify if a value is present in the array. 
 
 ```html
  <script>
 
      let marks = [50,60,70,80]
-
+    //check if 50 is included in array
     if(marks.includes(50)){
            console.log('found element in array')
        }else{
            console.log('could not find element')
        }
 
+       // check if 50 is found from index 1
      if(marks.includes(50,1)){ //search from index 1
            console.log('found element in array')
        }else{
            console.log('could not find element')
        }
 
-
+        //check Not a Number(NaN) in an array
        console.log([NaN].includes(NaN))
 
-       //check object is available in array
+       //create an object array
        let user1 = {name:'kannan'},
         user2 = {name:'varun'},
         user3={name:'prijin'}
-
         let users = [user1,user2]
+
+        //check object is available in array
         console.log(users.includes(user1))
-        console.log(user2.include(user3))
+        console.log(users.includes(user3))
 
 
 </script>
 ```
+
 Output of the above code snippet is given below- 
 
---insert output here---
-
-
-```
+```js
 found element in array
 could not find element
-```
+ true
+ true
+ false
 
+```
