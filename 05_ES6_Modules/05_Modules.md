@@ -55,13 +55,42 @@ export let setCompany = function(newValue){
 
 ```
 ## Importing a Module
-To be able to consume a module, use the import keyword. Single and multiple components can be imported from a module. Following is the syntax for the same.
+To be able to consume a module, use the `import` keyword. Single and multiple components can be imported from a module. We can import selected components or all components from a module. 
 
-### Syntax 2: Single export statement
+### Importing Selected Components from Module
 
+**Syntax**
 
+```js
 
-The following example defines a module with a variable and two functions.All the components in the module are exported using a single `export` statement. 
+import {component1,component2..componentN} from module_name
+
+```
+
+### Importing All Components from a Module
+
+Use the asterisk `*` operator to import all components from a module.
+
+**Syntax**
+
+```js
+
+import * as variable_name from module_name
+
+```
+
+Use the syntax given below to access an imported variable or function in the current file.
+
+**Syntax**
+
+```js
+
+variable_name.component_name
+
+```
+
+## Illustration 1: 
+**Step 1** Create a file company1.js and add the following code
 
 ```js
 
@@ -79,30 +108,30 @@ export {company,getCompany,setCompany}
 
 ```
 
-## Import Syntax
+**Step 2** Create a file company2.js. This file consumes components defined in the company1.js file. Add the following code- 
 
-now import this in another module as shown
-
-### Syntax 1
 ```js
- //file name:02_company.js
-import {company,getCompany} from './01_company.js'
+ 
+ import {company,getCompany} from './01_company.js'
 
 console.log(company)
 console.log(getCompany())
 
 ```
+The above code can also be written as given below - 
 
-### Syntax 2
- 
-   ```js
+```js
+
 import * as myCompany from './01_company.js'
 //namespace import
 console.log(myCompany.getCompany())
 console.log(myCompany.company)
- ```
 
-To execute both the modules we need to make an html file as shown below and run this in live server.Note in the script tag we should use attribute `type="module"`  
+```
+
+**Step 3** Execute the modules using an HTML file 
+
+To execute both the modules we need to make an html file as shown below and run this in live server.Note that we should use the attribute `type="module"` in the script tag.
 
 ```html
 <!DOCTYPE html>
@@ -119,7 +148,7 @@ To execute both the modules we need to make an html file as shown below and run 
 </html>
 ```
 
-output is shown below:
+**Output**
 
 ```js
 TutorialsPoint
