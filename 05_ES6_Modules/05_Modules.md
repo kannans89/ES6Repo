@@ -5,22 +5,20 @@ A module organizes a related set of JavaScript code.A module can contain variabl
 By default, variables and functions of a module are not available for use.Variables and functions within a module should be exported so that they can be accessed from within other files. Modules in ES6 work only in `strict mode`. This means variables or functions declared in a module will not be accessible globally.
 
 ## Exporting a Module
-The `export` keyword can be used to export components in a module. 
+The `export` keyword can be used to export components in a module. Exports in a module can be classified as - 
 
-### Exporting a Single Component
+A. Named Exports
+B. Default Exports
 
-**Syntax**
+### Named Exports
+Named exports are distinguished by their names. There can be several named exports per module. 
 
-```js
-export component_name
-```
+A module can export selected components using the syntax given below-
 
-### Exporting Multiple Components
-When importing multiple components,we can use multiple export statements or a single `export` with `{}` binding syntax. 
-
-**Syntax**
+**Syntax 1**
 
 ```js
+//using multiple export keyword
 export component1
 export component2
 ...
@@ -29,21 +27,37 @@ export componentN
 
 ```
 
-OR
+**Syntax 2**
+
+Alternatively, components in a module can also be exported using a single `export` keyword with `{}` binding syntax as shown below-
 
 ```js
+
+//using single export keyword
 
 export {component1,component2,....,componentN}
 
 ```
 
-In the second syntax, multiple components are exported using a single export statement. The module components are all grouped inside the `{}` syntax and seperated by a comma.
+### Default Exports
+Modules that need to export only a single value can use default exports.There can be only one default export per module. 
+
+**Syntax 1**
+
+```js
+
+export default component_name
+
+```
+However, a module can have a default export and multiple named exports at the same time.
 
 
 ## Importing a Module
-To be able to consume a module, use the `import` keyword. Single and multiple components can be imported from a module. We can import selected components or all components from a module. 
+To be able to consume a module, use the `import` keyword. A module can have multiple `import` statements.
 
-### Importing Selected Components from Module
+### Importing Named Exports
+
+While importing named exports, the names of the corresponding components must match.
 
 **Syntax**
 
@@ -53,11 +67,15 @@ import {component1,component2..componentN} from module_name
 
 ```
 
-### Importing All Components from a Module
+However,while importing named exports,they can be renamed using the `as` keyword.Use the syntax given below- 
 
-Use the asterisk `*` operator to import all components from a module.
+```js
 
-**Syntax**
+import {original_component_name as new_component_name }
+
+```
+
+All named exports can be imported onto an object by using the asterisk `*` operator.
 
 ```js
 
@@ -65,17 +83,19 @@ import * as variable_name from module_name
 
 ```
 
-Use the syntax given below to access an imported variable or function in the current file.
+### Importing Default Exports
+Unlike named exports,a default export can be imported with any name.
 
 **Syntax**
 
 ```js
 
-variable_name.component_name
+import any_variable_name from module_name
 
 ```
 
-## Illustration 1: 
+## Illustration : Named Exports
+
 **Step 1 :** Create a file company1.js and add the following code
 
 ```js
@@ -94,22 +114,35 @@ export {company,getCompany,setCompany}
 
 ```
 
-**Step 2 :** Create a file company2.js. This file consumes components defined in the company1.js file. Add the following code- 
+**Step 2 :** Create a file company2.js. This file consumes components defined in the company1.js file. Use any of the following approaches to import the module.
+
+Approach 1: 
 
 ```js
  
- import {company,getCompany} from './01_company.js'
+ import {company,getCompany} from './company1.js'
 
 console.log(company)
 console.log(getCompany())
 
 ```
-The above code can also be written as given below - 
+ 
+Approach 2: 
 
 ```js
+ 
+ import {company as x, getCompany as y} from './company1.js'
 
-import * as myCompany from './01_company.js'
-//namespace import
+console.log(x)
+console.log(y())
+
+```
+
+Approach 3:
+```js
+
+import * as myCompany from './company1.js'
+
 console.log(myCompany.getCompany())
 console.log(myCompany.company)
 
@@ -129,7 +162,7 @@ To execute both the modules we need to make an html file as shown below and run 
     <title>Document</title>
 </head>
 <body>
-    <script src="./02_company.js" type="module"></script>
+    <script src="./company2.js" type="module"></script>
 </body>
 </html>
 ```
@@ -141,11 +174,12 @@ TutorialsPoint
 TUTORIALSPOINT
 ```
 
--- Review this---
-## Create Default module
+
+## Illustration : Default Export
+
+**Step 1 :** Create a file company1.js and add the following code
 
 ```js
- //file name :01_default.js
 
 let name = 'TutorialsPoint'
 
@@ -158,23 +192,27 @@ let company = {
     }
 
 }
-//one per module
+
 export default company
+
 ```
 
-## Import default module
+**Step 2 :** Create a file company2.js. This file consumes the components defined in the company1.js file. 
+
 
 ```js
-//file name:02_default.js
-import company from './01_default.js'
+import c from './company1.js'
 
-console.log(company.getName())
-company.setName('Google Inc')
-console.log(company.getName())
+console.log(c.getName())
+c.setName('Google Inc')
+console.log(c.getName())
 
 ```
+ 
 
-## Execute the modules
+**Step 3 :** Execute the modules using an HTML file 
+
+To execute both the modules we need to make an html file as shown below and run this in live server.Note that we should use the attribute `type="module"` in the script tag.
 
 ```html
 <!DOCTYPE html>
@@ -186,24 +224,24 @@ console.log(company.getName())
     <title>Document</title>
 </head>
 <body>
-    <script src="02_default.js" type="module"></script>
+    <script src="./company2.js" type="module"></script>
 </body>
 </html>
 ```
 
-output is shown below
+**Output**
 
 ```js
 TutorialsPoint
 Google Inc
 ```
 
-## Combining Default and Non Default Modules
+## Illustration: Combining Default and Named Exports
 
-### export
+**Step 1 :** Create a file company1.js and add the following code-
 
 ```js
-//file name: 01_default.js
+//named export
 export let name = 'TutorialsPoint'
 
 let company = {
@@ -215,28 +253,24 @@ let company = {
     }
 
 }
-//one per module
+//default export
 export default company
 ```
 
-### import
-
-
-when importing default and non default items from a module , first specify the default followed by non defulat with `{}` syntax
+**Step 2 :** Create a file company2.js. This file consumes the components defined in the company1.js file. Import the default export first, followed by the named exports.
 
 ```js
-//file name: 02_default.js
- // import firstDefault and then non default components
-import company, {name} from './01_default.js'
+
+import c, {name} from './company1.js'
 
 console.log(name)
-console.log(company.getName())
-company.setName("Mohtashim")
-console.log(company.getName())
+console.log(c.getName())
+c.setName("Mohtashim")
+console.log(c.getName())
 ```
 
 
-### Execute
+**Step 3 :** Execute the modules using an HTML file 
 
 ```html
 <!DOCTYPE html>
@@ -248,8 +282,16 @@ console.log(company.getName())
     <title>Document</title>
 </head>
 <body>
-    <script src="02_default.js" type="module"></script>
+    <script src="company2.js" type="module"></script>
 </body>
 </html>
 
+```
+
+**Output** 
+
+```js
+TutorialsPoint
+TutorialsPoint
+Mohtashim
 ```
