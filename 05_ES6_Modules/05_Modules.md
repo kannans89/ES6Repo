@@ -1,19 +1,43 @@
 # Modules
+Consider a scenario where parts of JavaScript code need to be reused. ES6 comes to your rescue with the concept of Modules.
 
-A module organizes a related set of JavaScript code written in a file.A module can contain variables and functions. By default, variables and functions of a module cannot be accessed outside the module.Variables and functions within a module should be exported so that they can be accessed from within other files. Modules in ES6 work only in `strict mode`. This means variables or functions declared in a module will not be added in global scope.
+A module organizes a related set of JavaScript code.A module can contain variables and functions.A module is nothing more than a chunk of JavaScript code written in a file.  
+By default, variables and functions of a module are not available for use.Variables and functions within a module should be exported so that they can be accessed from within other files. Modules in ES6 work only in `strict mode`. This means variables or functions declared in a module will not be accessible globally.
 
-## export and import
+## Exporting a Module
+The `export` keyword can be used to export components in a module. 
 
-The `export` keyword can be used to export single / multiple components in a module. 
-When importing multiple components,we can use multiple export statements or a single `export` with `{}` binding syntax. 
-
-### Multiple export statements
+### Exporting a Single Component
 
 **Syntax**
 
 ```js
 export component_name
 ```
+
+### Exporting Multiple Components
+When importing multiple components,we can use multiple export statements or a single `export` with `{}` binding syntax. 
+
+**Syntax**
+
+```js
+export component1
+export component2
+...
+...
+export componentN
+
+```
+
+OR
+
+```js
+export {component1,component2,....,componentN}
+```
+
+In the second syntax, multiple components are exported using a single export statement. The module components are all grouped inside the `{}` syntax and seperated by a comma.
+
+
 
 The following example defines a module with a variable and two functions. These components are individually exported using the `export` keyword.
 
@@ -30,20 +54,17 @@ export let setCompany = function(newValue){
 }
 
 ```
+## Importing a Module
+To be able to consume a module, use the import keyword. Single and multiple components can be imported from a module. Following is the syntax for the same.
 
 ### Syntax 2: Single export statement
 
-**Syntax**
 
-```js
-export {component1,component2,....,componentN}
-```
-Multiple components can be exported using a single export statement. The module components are all grouped inside the `{}` syntax, seperated by a comma.
 
 The following example defines a module with a variable and two functions.All the components in the module are exported using a single `export` statement. 
 
 ```js
- //file name: 01_company.js
+
 let company = "TutorialsPoint"
 
  let getCompany = function(){
@@ -59,8 +80,6 @@ export {company,getCompany,setCompany}
 ```
 
 ## Import Syntax
-
-
 
 now import this in another module as shown
 
