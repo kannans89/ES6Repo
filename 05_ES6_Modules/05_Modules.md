@@ -32,28 +32,14 @@ export componentN
 OR
 
 ```js
+
 export {component1,component2,....,componentN}
+
 ```
 
 In the second syntax, multiple components are exported using a single export statement. The module components are all grouped inside the `{}` syntax and seperated by a comma.
 
 
-
-The following example defines a module with a variable and two functions. These components are individually exported using the `export` keyword.
-
-```js
-
-export let company = "TutorialsPoint"
-
-export let getCompany = function(){
-    return company.toUpperCase()
-}
-
-export let setCompany = function(newValue){
-    company = newValue
-}
-
-```
 ## Importing a Module
 To be able to consume a module, use the `import` keyword. Single and multiple components can be imported from a module. We can import selected components or all components from a module. 
 
@@ -90,7 +76,7 @@ variable_name.component_name
 ```
 
 ## Illustration 1: 
-**Step 1** Create a file company1.js and add the following code
+**Step 1 :** Create a file company1.js and add the following code
 
 ```js
 
@@ -108,7 +94,7 @@ export {company,getCompany,setCompany}
 
 ```
 
-**Step 2** Create a file company2.js. This file consumes components defined in the company1.js file. Add the following code- 
+**Step 2 :** Create a file company2.js. This file consumes components defined in the company1.js file. Add the following code- 
 
 ```js
  
@@ -129,7 +115,7 @@ console.log(myCompany.company)
 
 ```
 
-**Step 3** Execute the modules using an HTML file 
+**Step 3 :** Execute the modules using an HTML file 
 
 To execute both the modules we need to make an html file as shown below and run this in live server.Note that we should use the attribute `type="module"` in the script tag.
 
