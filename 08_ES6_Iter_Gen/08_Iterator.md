@@ -1,21 +1,20 @@
 # Iterator
 
-<!-- 
-https://www.freecodecamp.org/news/demystifying-es6-iterables-iterators-4bdd0b084082/ -->
-
-Iterable allows us to iterate over a collection of values using a `for...of` loop.The folllowing build in types are by default iterable.
+Iterator is an object which allows to access a collection of objects one at a time. The following built-in types are by default iterable.
 - String
 - Array
 - Map
 - Set
-  
-Data consumers are for..of loop / spread operator which inserts values into the array.
 
-Data sources are  Strings , Array ,Map.
+An object is considered iterable if the object implements a function whose key is `[Symbol.iterator]` and returns an iterator.A `for...of` loop can be used to iterate a collection.
 
-It is not possible for data consumers to support all sources because there could be new sources also. So es6 introduces the interface `iterable` where all datasources implments the iterable interface and data consumers implement it to retreieve the values.
 
-An object is considered iterable if the object implements a function whose key is `[Symbol.iterator]` and returns an iterator.
+<!-- 
+https://www.freecodecamp.org/news/demystifying-es6-iterables-iterators-4bdd0b084082/ -->
+
+### Illustration 1
+
+The following example declares an array,marks and iterates through it by using a `for..of` loop.
 
 ```html
 
@@ -26,31 +25,44 @@ let marks = [10,20,30]
          for(let m of marks){
              console.log(m);
          }
-        //retrieve iterator
-
-        let iter = marks[Symbol.iterator]();// function which return iterator and key is Symbol.iterator
-        console.log(iter.toString())
-        console.log(iter.next()) // value and done
-        console.log(iter.next())
-        console.log(iter.next())
-        console.log(iter.next())
+        
 </script>
 ```
-output is :
+
+Output of the above code will be:
 
 ```js
 10
 20
 30
-[object Array Iterator]
+```
+
+
+### Illustration 2
+The following example declares an array, marks and retrieves an iterator object . The `[Symbol.iterator]()` can be used to retrieve an iterator object. Thhe `next()` method of the iterator returns an object with 'value' and 'done' properties . 'done' is boolean and returns true after reading all items in the collection.
+
+```js
+        let marks = [10,20,30]
+        let iter = marks[Symbol.iterator]();
+        console.log(iter.next()) 
+        console.log(iter.next())
+        console.log(iter.next())
+        console.log(iter.next())
+
+```
+
+Output of the above code will be:
+
+```js
+
 {value: 10, done: false}
 {value: 20, done: false}
 {value: 30, done: false}
 {value: undefined, done: true}
+
 ```
 
-
-Example 2: User defined iterable
+## Custom Iterable
 In this example we are creating a class `CustomerList` which can be iterated using a `for of ` loop.The constructor of the class takes an array of customer objects. To convert this class to iterable it should implment function whose key is `[Symbol.iterator]`  as shown below.This function returns an iterator object.The iterator object has a function `next` which returns an object `{value:'someValue',done:true/false}`
 
 ```html
