@@ -63,17 +63,19 @@ Output of the above code will be:
 ```
 
 ## Custom Iterable
+
+
 In this example we are creating a class `CustomerList` which can be iterated using a `for of ` loop.The constructor of the class takes an array of customer objects. To convert this class to iterable it should implment function whose key is `[Symbol.iterator]`  as shown below.This function returns an iterator object.The iterator object has a function `next` which returns an object `{value:'someValue',done:true/false}`
 
 ```html
- 
-    <script>
+
+  <script>
          
+         //user defined iterable
         class CustomerList {
                constructor(customers){
                    this.customers = [].concat(customers)
                }
-
                [Symbol.iterator](){
                    let count=0;
                    let customers = this.customers
@@ -88,34 +90,31 @@ In this example we are creating a class `CustomerList` which can be iterated usi
                                }
                            }
                            return {done:true}
-
                        }
                    }
                }
-
         }
-
-        let customersObj = new CustomerList([{
-            firstName:'A'
-        },{
-          firstName:'B'
-        },{
-          firstName:'C'
-        }]);
-
+        let c1={
+            firstName:'Sachin',
+            lastName:'Tendulkar'
+        }
+        let c2={
+            firstName:'Rahul',
+            lastName:'Dravid'
+        }
+       let customers=[c1,c2]
+        let customersObj = new CustomerList(customers);
         for(let c of customersObj){
            console.log(c)
         }
-
         let iter = customersObj[Symbol.iterator]();
         console.log(iter.next())
         console.log(iter.next())
         console.log(iter.next())
-        console.log(iter.next())
-</script>
+       
 ```
 
-output is shown :
+Output is shown :
 
 ```js
 
