@@ -36,6 +36,7 @@ let marks = [10,20,30]
         console.log(iter.next())
 </script>
 ```
+
 output is :
 
 ```js

@@ -9,65 +9,89 @@
 <body>
     <script>
          
-        //  //user defined iterable
-        // class CustomerList {
-        //        constructor(customers){
-        //            this.customers = [].concat(customers)
-        //        }
+         //user defined iterable
+        class CustomerList {
+               constructor(customers){
+                   this.customers = [].concat(customers)
+               }
 
-        //        [Symbol.iterator](){
-        //            let count=0;
-        //            let customers = this.customers
-        //            return {
-        //                next:function(){
-        //                    let customerVal = customers[count];
-        //                    count+=1;
-        //                    if(count<=customers.length){
-        //                        return {
-        //                            value:customerVal,
-        //                            done:false
-        //                        }
-        //                    }
-        //                    return {done:true}
+               [Symbol.iterator](){
+                   let count=0;
+                   let customers = this.customers
+                   return {
+                       next:function(){
+                           let customerVal = customers[count];
+                           count+=1;
+                           if(count<=customers.length){
+                               return {
+                                   value:customerVal,
+                                   done:false
+                               }
+                           }
+                           return {done:true}
 
-        //                }
-        //            }
-        //        }
+                       }
+                   }
+               }
 
-        // }
+        }
 
-        // let customersObj = new CustomerList([{
-        //     firstName:'A'
-        // },{
-        //   firstName:'B'
-        // },{
-        //   firstName:'C'
-        // }]);
+        let c1={
+            firstName:'Sachin',
+            lastName:'Tendulkar'
+        }
+        let c2={
+            firstName:'Rahul',
+            lastName:'Dravid'
+        }
+       let customers=[c1,c2]
+        let customersObj = new CustomerList(customers);
 
-        // for(let c of customersObj){
-        //    console.log(c)
-        // }
+        for(let c of customersObj){
+           console.log(c)
+        }
 
-        // let iter = customersObj[Symbol.iterator]();
-        // console.log(iter.next())
-        // console.log(iter.next())
-        // console.log(iter.next())
-        // console.log(iter.next())
-
-         let marks = [10,20,30]
-              
-         //check iterable using for..of
-         for(let m of marks){
-             console.log(m);
+        let iter = customersObj[Symbol.iterator]();
+        console.log(iter.next())
+        console.log(iter.next())
+        console.log(iter.next())
+       
+        //output
+       /*
+        {firstName: "Sachin", lastName: "Tendulkar"}
+        {firstName: "Rahul", lastName: "Dravid"}
+        {
+            done: false
+            value: {
+            firstName: "Sachin",
+            lastName: "Tendulkar"
+            }
          }
-        //retrieve iterator
+          {
+            done: false
+            value: {
+            firstName: "Rahul",
+            lastName: "Dravid"
+            }
+         }
+         {done: true}
 
-        let iter = marks[Symbol.iterator]();
-        console.log(iter.toString())
-        console.log(iter.next()) // value and done
-        console.log(iter.next())
-        console.log(iter.next())
-        console.log(iter.next())
+        */
+
+        //  let marks = [10,20,30]
+              
+        //  //check iterable using for..of
+        //  for(let m of marks){
+        //      console.log(m);
+        //  }
+        // //retrieve iterator
+
+        // let iter = marks[Symbol.iterator]();
+        // console.log(iter.toString())
+        // console.log(iter.next()) // value and done
+        // console.log(iter.next())
+        // console.log(iter.next())
+        // console.log(iter.next())
 
         
     </script>
