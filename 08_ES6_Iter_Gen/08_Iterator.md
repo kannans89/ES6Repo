@@ -119,6 +119,24 @@ output is shown :
 
 ```js
 
+        {firstName: "Sachin", lastName: "Tendulkar"}
+        {firstName: "Rahul", lastName: "Dravid"}
+        {
+            done: false
+            value: {
+            firstName: "Sachin",
+            lastName: "Tendulkar"
+            }
+         }
+          {
+            done: false
+            value: {
+            firstName: "Rahul",
+            lastName: "Dravid"
+            }
+         }
+         {done: true}
+
 ```
 
 ## Generator
