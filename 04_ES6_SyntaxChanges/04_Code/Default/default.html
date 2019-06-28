@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addTwoNumbers(first,second=10){
+            console.log('first parameter is :',first)
+            console.log('second parameter is :',second)
+            return first+second;
+        }
+
+        console.log("case 1 sum:",addTwoNumbers(20))
+        console.log("case 2 sum:",addTwoNumbers(2,3))
+        console.log("case 3 sum:",addTwoNumbers())
+        console.log("case 4 sum",addTwoNumbers(1,null))
+        console.log("case 5 sum",addTwoNumbers(3,undefined))
+    </script>
+</body>
+</html>
