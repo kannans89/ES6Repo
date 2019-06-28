@@ -2,7 +2,7 @@
 
 ## Default Function Parameters
 
-Default parameters helps programmers to handle null  or undefined values  passed to function.Given example shows a function which takes two parameters and returns sum. The second parameter have default value to 10.This means if no value is passed to second parameter its value will be 10.
+Default parameters helps programmers to handle  undefined values or no arguments  passed to function.Given example shows a function which takes two parameters and returns sum. The second parameter have default value to 10.This means if no value is passed to second parameter its value will be 10.
 
 
 ```html
@@ -13,12 +13,11 @@ Default parameters helps programmers to handle null  or undefined values  passed
             return first+second;
         }
 
-        console.log("case 1 sum:",addTwoNumbers(20))
+        console.log("case 1 sum:",addTwoNumbers(20)) // no value
         console.log("case 2 sum:",addTwoNumbers(2,3))
         console.log("case 3 sum:",addTwoNumbers())
-        console.log("case 4 sum",addTwoNumbers(1,null))
+        console.log("case 4 sum",addTwoNumbers(1,null))//null passed 
         console.log("case 5 sum",addTwoNumbers(3,undefined))
-        
     </script>
 
 ```
@@ -41,4 +40,31 @@ second parameter is : null
  first parameter is : 3
  second parameter is : 10
  case 5 sum 13
+```
+
+we can also assign default value in a variable as shown below example
+
+```html
+  <script>
+             let DEFAULT_VAL = 30
+                function addTwoNumbers(first,second=DEFAULT_VAL){
+                    console.log('first parameter is :',first)
+                    console.log('second parameter is :',second)
+                    return first+second;
+                }
+                console.log("case 1 sum",addTwoNumbers(1))
+                console.log("case 2 sum",addTwoNumbers(3,undefined))
+            </script>
+```
+
+output is shown below:
+
+```js
+first parameter is : 1
+second parameter is : 30
+case 1 sum 31
+first parameter is : 3
+second parameter is : 30
+case 2 sum 33
+
 ```
