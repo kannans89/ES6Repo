@@ -9,52 +9,51 @@
 <body>
     <script>
          
-         //user defined iterable
-        class CustomerList {
-               constructor(customers){
-                   this.customers = [].concat(customers)
-               }
+        //  //user defined iterable
+        // class CustomerList {
+        //        constructor(customers){
+        //            this.customers = [].concat(customers)
+        //        }
 
-               [Symbol.iterator](){
-                   let count=0;
-                   let customers = this.customers
-                   return {
-                       next:function(){
-                           let customerVal = customers[count];
-                           count+=1;
-                           if(count<=customers.length){
-                               return {
-                                   value:customerVal,
-                                   done:false
-                               }
-                           }
-                           return {done:true}
+        //        [Symbol.iterator](){
+        //            let count=0;
+        //            let customers = this.customers
+        //            return {
+        //                next:function(){
+        //                    let customerVal = customers[count];
+        //                    count+=1;
+        //                    if(count<=customers.length){
+        //                        return {
+        //                            value:customerVal,
+        //                            done:false
+        //                        }
+        //                    }
+        //                    return {done:true}
 
-                       }
-                   }
-               }
+        //                }
+        //            }
+        //        }
 
-        }
+        // }
 
-        let customersObj = new CustomerList([{
-            firstName:'A'
-        },{
-          firstName:'B'
-        },{
-          firstName:'C'
-        }]);
+        // let customersObj = new CustomerList([{
+        //     firstName:'A'
+        // },{
+        //   firstName:'B'
+        // },{
+        //   firstName:'C'
+        // }]);
 
-        for(let c of customersObj){
-           console.log(c)
-        }
+        // for(let c of customersObj){
+        //    console.log(c)
+        // }
 
-        let iter = customersObj[Symbol.iterator]();
-        console.log(iter.next())
-        console.log(iter.next())
-        console.log(iter.next())
-        console.log(iter.next())
+        // let iter = customersObj[Symbol.iterator]();
+        // console.log(iter.next())
+        // console.log(iter.next())
+        // console.log(iter.next())
+        // console.log(iter.next())
 
-        /*
          let marks = [10,20,30]
               
          //check iterable using for..of
@@ -70,7 +69,6 @@
         console.log(iter.next())
         console.log(iter.next())
 
-        */
         
     </script>
 </body>

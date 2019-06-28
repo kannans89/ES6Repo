@@ -9,29 +9,29 @@
 <body>
     <script>
 
-       function * evenNumberGenerator(){
-            let num = 0;
+    //    function * evenNumberGenerator(){
+    //         let num = 0;
 
-            while(true){
-                num+=2
-                yield num
+    //         while(true){
+    //             num+=2
+    //             yield num
                
-            }
+    //         }
 
-       }
+    //    }
 
-       let iter = evenNumberGenerator();
-       console.log(iter.next())
-       console.log(iter.next())
-       //using for of
+    //    let iter = evenNumberGenerator();
+    //    console.log(iter.next())
+    //    console.log(iter.next())
+    //    //using for of
 
-       for(let n of evenNumberGenerator()){
-           if(n==12)break;
-           console.log(n);
-       }
+    //    for(let n of evenNumberGenerator()){
+    //        if(n==12)break;
+    //        console.log(n);
+    //    }
 
 
-        /*
+        
        function * getMarks(){
            yield 10
            yield 20
@@ -48,7 +48,7 @@
        console.log(markIter.next())
        console.log(markIter.next())
        console.log(markIter.next())
-       */
+       
     </script>
 </body>
 </html>
