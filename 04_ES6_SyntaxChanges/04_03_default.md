@@ -2,7 +2,10 @@
 
 ## Default Function Parameters
 
-Default parameters helps programmers to handle  undefined values or no arguments  passed to function.Given example shows a function which takes two parameters and returns sum. The second parameter have default value to 10.This means if no value is passed to second parameter its value will be 10.
+In ES6, a function allows the parameters to be initialized with default values, if no values are passed to it or it is undefined.
+
+### Illustration
+The following example shows a function which takes two parameters and returns their sum. The second parameter has a default value of 10.This means if no value is passed to second parameter, its value will be 10.
 
 
 ```html
@@ -22,7 +25,7 @@ Default parameters helps programmers to handle  undefined values or no arguments
 
 ```
 
-output is :
+Output  :
 
 ```js
 first parameter is : 20
@@ -42,7 +45,7 @@ second parameter is : null
  case 5 sum 13
 ```
 
-we can also assign default value in a variable as shown below example
+### Illustration
 
 ```html
   <script>
@@ -57,7 +60,7 @@ we can also assign default value in a variable as shown below example
             </script>
 ```
 
-output is shown below:
+Output: 
 
 ```js
 first parameter is : 1
