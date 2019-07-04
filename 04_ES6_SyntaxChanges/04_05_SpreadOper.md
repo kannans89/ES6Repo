@@ -2,9 +2,11 @@
 
 ## SpreadOperator
 
-ES6 provides a new operator called the spread operator.That consist of of three dots `...` . This helps to spread out the element of an array or a string.For example
+ES6 provides a new operator called the spread operator.The spread operator is represented by three dots `...` . The spread operator converts an array into individual array elements.
 
-### Example 1:Spread operator and  function
+### Spread operator and  function
+
+**Illustration**
 
 ```html
 
@@ -20,7 +22,13 @@ ES6 provides a new operator called the spread operator.That consist of of three 
 
 ```
 
-### Example 2:  array copy and concat
+Output: 
+
+
+### Spread operator and Array copy and concat
+The spread operator can be used to copy one array into another. It can also be used to concatenate two or more arrays.This is shown in the example below: 
+
+**Illustration**
 
 ```html
 <script>
@@ -40,8 +48,14 @@ ES6 provides a new operator called the spread operator.That consist of of three 
 
 ```
 
-### Example 3: Object copy and concat
+Output
 
+
+
+### Spread Operator and Object copy and concat
+The spread operator can be used to copy one object into another. It can also be used to concatenate two or more objects.This is shown in the example below:
+
+**Illustration**
 
 ```html
   <script>
@@ -57,3 +71,5 @@ ES6 provides a new operator called the spread operator.That consist of of three 
 </script>
 
 ```
+
+Output
