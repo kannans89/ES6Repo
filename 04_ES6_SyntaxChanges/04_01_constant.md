@@ -2,7 +2,13 @@
 
 ## Constant
 
-`const` keyword in ES6 allows js programmers to declare and initialize a constant.Constant are declared by convention capital cases with underscore as separator of words
+The `const` keyword creates a read-only reference to a value. It does not mean the value it holds is immutable, just that the variable identifier cannot be reassigned. Constants are block-scoped, much like variables defined using the let statement. The value of a constant cannot change through re-assignment, and it can't be re-declared.
+
+The following rules hold true for a variable declared using the const keyword −
+- Constants cannot be reassigned a value.
+- A constant cannot be re-declared.
+- A constant requires an initializer. This means constants must be initialized during its declaration.
+- The value assigned to a const variable is immutable.
 
 ### Syntax
 
@@ -10,7 +16,7 @@
   const VARIABLE_NAME = value
 ```
 
-### Example 1
+### Illustration
 
 ```html
      <script>
@@ -21,11 +27,13 @@
 
 ```
 
-output is `Deductions is  120000`
+Output:  
 
-### Example 2
+`Deductions is  120000`
 
-Constants are immutable unlike let , that means its value cannot be changed.For example in below example if we try to change value of constant variable the following error will be displayed.
+## Constants are Immuatble
+
+Unlike variables declared using `let` keyword,constants are immutable unlike let , that means its value cannot be changed.For example in the below example if we try to change value of the constant variable the an error will be displayed.
 
 ```html
   <script>
@@ -39,16 +47,16 @@ Constants are immutable unlike let , that means its value cannot be changed.For 
 
 ```
 
-output is shown below
+Output :
 
 ```js
 changed income value is  150000
 Uncaught TypeError: Assignment to constant variable
 ```
 
-### Example 3 - const and arrays
+### const and arrays
 
-Following example shows how to assign array to a constant variable.The array contents are allowed to be modified but reassigning the same `const` variable to a new array will give error as shown below.
+Following example shows how to create an immutable array.New elements can be added to the array. However, reinitializing the array will result in an error as shown below.
 
 ```html
  <script>
@@ -64,7 +72,7 @@ Following example shows how to assign array to a constant variable.The array con
     </script>
 ```
 
-In above example we are pushing values to a const array DEPT_NOS.Also when we try to re initialize the constant array EMP_IDS ,it gives error.
+The above example declares a constant array. A new element can be added to the array.However, when we try to re initialize the constant array EMP_IDS ,it gives error.
 
 ```js
 dept numbers is  (5) [10, 20, 30, 50, 40]

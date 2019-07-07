@@ -1,14 +1,14 @@
 # ES6 Syntax Changes
 
 ## Octal and  Binary Literals
+Prior to ES6, there was no support for binary literals. ES6 added support for binary literals and changed the representation for octal literals.Prior to ES6, octal literals were represented using the prefix `0`.In ES6, octal literals and binary literals are represented by using the prefix `0o` and `0b` respectively.
 
-The representation of Ocatal and Binary literals in ES6.In es5
-
-
+### Illustration
+The following example illustrates octal literal in ES5 and ES6.
 ```html
 <script>
 
-
+       //octal in ES5
        var old_octal_style = 010 //octal base 8
         console.log(old_octal_style) // decimal base 10
 
@@ -21,9 +21,16 @@ The representation of Ocatal and Binary literals in ES6.In es5
 
 ```
 
-In ES5 javascript doesn't provide any literal form of binary numbers.
-To parse a binary string we need to use the parseInt function.For example
+Output: 
 
+```
+//output goes here...
+
+```
+
+
+### Illustration
+The following example illustrates binary literal in ES5 and ES6.
 
 ```html
 <script>
@@ -38,4 +45,11 @@ To parse a binary string we need to use the parseInt function.For example
  
     </script>
 
+```
+
+Output: 
+
+```
+3
+3
 ```

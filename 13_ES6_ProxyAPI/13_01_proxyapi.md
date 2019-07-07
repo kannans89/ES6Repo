@@ -1,5 +1,5 @@
 # Proxy API
-
+ES6 implements intercession form of meta programming using Proxies. 
 Proxy API is another way to write meta programming in ES6 like  ReflectAPI.Proxy means a middleman who does work on behalf of real object.
 
 <!-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy -->
