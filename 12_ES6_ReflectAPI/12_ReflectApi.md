@@ -1,3 +1,7 @@
+# Reflect API
+
+ #@ ES6 Meta programming
+
 ES6 introduces new features around meta-programming. Meta programming involves inspecting or modifying the structure of the program, or changing the way things work in the language itself.
 
 Following are the three forms of meta programming:
@@ -7,8 +11,9 @@ c. Intercession: refers to code modifying the default behaviour of a programming
 
 ES6 introduces Reflect API and Proxy API that supports meta programming. 
 
-# Reflect API
-Reflect API in ES6 allows allows us to inspect, or modify classes, objects, properties, and methods of a program at runtime. The Reflect API provides global `Reflect` object which has static methods that can be used for introspection . These methods can used to discover low level information about the code.The Reflect API can be used to build automation testing frameworks that  examine,introspect program at runtime.
+## Meta Programming with Reflect API
+
+Reflect API in ES6 allows allows us to inspect, or modify classes, objects,properties, and methods of a program at runtime. The Reflect API provides global `Reflect` object which has static methods that can be used for introspection . These methods can used to discover low level information about the code.The Reflect API can be used to build automation testing frameworks that  examine,introspect program at runtime.
 
 // Add description: why to use Reflect API functions when these are already available. Eg construct() vs using new keyword
 // Add examples that prove Reflect API methods are called at runtime. 
