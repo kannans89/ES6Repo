@@ -5,6 +5,7 @@
 In ES6, a function allows the parameters to be initialized with default values, if no values are passed to it or it is undefined.
 
 ### Illustration
+
 The following example shows a function which takes two parameters and returns their sum. The second parameter has a default value of 10.This means if no value is passed to second parameter, its value will be 10.
 
 

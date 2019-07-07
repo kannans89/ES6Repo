@@ -14,7 +14,7 @@ The syntax for using  a template literal is given below:
 
 ### Syntax
 
-```
+```js
 //simple template literal
 `string text`
 
@@ -88,4 +88,96 @@ The output of the above code is :
 The total is 150
 ```
 
-//should we include tagged template literals ??
+## Tagged Templates
+
+ A tag is a function which can interpret and process a template literal. A tag appears in front  of the  template literal.Syntax is shown below.
+
+ ```js
+   let output_fromTag = tagFunction `Template literal with ${variable1} , ${variable2}`
+ ```
+
+The tag function implementation syntax is blow
+
+```js
+function tagFunction(literals,...variable_values){
+    //process
+    return "some result"
+}
+
+```
+
+## Illustraion 1
+
+
+```html
+<script>
+         function myTagFn(literals,...values){
+
+            console.log("literal values are");
+            for(let c of literals){
+                console.log(c)
+            }
+
+            console.log("variable values are ");
+            for(let c of values){
+                console.log(c)
+            }
+
+            return "Done"
+         }
+         let company = `TutorialsPoint`
+         let   company_location = `Mumbai`
+         let result = myTagFn `Hello this is ${company} from ${company_location}`
+
+         console.log(result)
+        
+    </script>
+
+```
+
+output is : The result from tag function is `Done`
+
+```js
+literal values are
+ Hello this is 
+  from
+
+ variable values are 
+ TutorialsPoint
+ Mumbai
+ Done
+
+```
+
+
+## Illustraion 2:
+
+The below tag function takes a template literal and converts it to upper case as shown.
+
+```html
+ <script>
+        function convertToUpperTagFn(literals, ...values) {
+
+            let result = "";
+
+            for (let i = 0; i < literals.length; i++) {
+                result += literals[i];
+                if (i < values.length) {
+                    result += values[i];
+                }
+            }
+
+            return result.toUpperCase();
+        }
+        let company = `TutorialsPoint`
+        let company_location = `Mumbai`
+        let result = convertToUpperTagFn `Hello this is ${company} from ${company_location}`
+
+        console.log(result)
+
+    </script>
+
+
+```
+
+output: `HELLO THIS IS TUTORIALSPOINT FROM MUMBAI`
