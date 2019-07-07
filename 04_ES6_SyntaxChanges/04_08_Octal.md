@@ -1,7 +1,8 @@
 # ES6 Syntax Changes
 
 ## Octal and  Binary Literals
-Prior to ES6, there was no support for binary literals. ES6 added support for binary literals and changed the representation for octal literals.Prior to ES6, octal literals were represented using the prefix `0`.In ES6, octal literals and binary literals are represented by using the prefix `0o` and `0b` respectively.
+
+Prior to ES6, there was no support for binary literals. ES6 added support for binary literals and changed the representation for octal literals.In ES5, octal literals were represented using the prefix `0`.In ES6, octal literals and binary literals are represented by using the prefix `0o` and `0b` respectively.
 
 ### Illustration
 The following example illustrates octal literal in ES5 and ES6.
@@ -23,8 +24,9 @@ The following example illustrates octal literal in ES5 and ES6.
 
 Output: 
 
-```
-//output goes here...
+```js
+8
+8
 
 ```
 
