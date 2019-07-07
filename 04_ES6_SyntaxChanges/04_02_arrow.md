@@ -4,41 +4,7 @@
 
 ### ES5 and Anonymous functions
 
-Javascript makes heavy use of anonymous functions.They are functions which will be run by somebody else later on based on an event or some other conditions.For example let see how  anonymous function is used with `map` function of array and `setTimeout` function.
-
-### Example 1 : map function
-
-In the given example we are iterating across each element using `map` function. So the map function takes another `callback` anonymous function.This function will be called back when an element is found inside the array.This function takes `element` and `index`
-
-```html
-
- <script>
-      const names = ['TutorialsPoint','Mohtashim','Bhargavi','Raja']
-        names.map(function(element,index){
-           console.log('inside anonymous function')
-            console.log('index is '+index+' element value is :'+element)
-        })
-
-</script>
-
-```
-
-the output is shown below
-
-```html
-inside anonymous function
-index is 0 element value is :TutorialsPoint
-inside anonymous function
-index is 1 element value is :Mohtashim
-inside anonymous function
-index is 2 element value is :Bhargavi
-inside anonymous function
-index is 3 element value is :Raja
-```
-
-### Example 2 : setTimeout function
-
-The setTimeout function allows takes an anonymous function and it will invoke that function after a specific time .Example shows after 1 second the string message in `console.log` is displayed
+Javascript makes heavy use of anonymous functions.An anonymous function is a function that does not have a name attached to it. Anonymous functions are used during function callback.The following example illustrates the use of an anonymous function in ES5. 
 
 ```html
 <script>
@@ -49,7 +15,9 @@ The setTimeout function allows takes an anonymous function and it will invoke th
 
 ```
 
-output is shown after 1 second
+The above example passes an anonymous function as a parameter to the predefined `setTimeout` function. The `setTimeout` function will callback the anonymous function after 1 second.
+
+The following output is shown after 1 second: 
 
 ```html
 Learning at TutorialsPoint is fun!!
@@ -57,61 +25,41 @@ Learning at TutorialsPoint is fun!!
 
 ## Arrow Function Syntax
 
-Arrow functions are short hand syntax for using anonymous functions. The syntax of arrow function is `()=> { //some statements }`  or `()=>returnValue` or `(param1,param2)=>{//some statement}`
+ES6 introduces the concept of arrow function to simplify the usage of anonymous function.There are 3 parts to an arrow function.
 
-### Example 1 : map and arrow function
+- Parameters:An arrow function may optionally have parameters
+- The fat arrow notation (=>): It is also called as the goes to operator
+- Statements − Represents the function’s instruction set
 
-In the given example we will replace anonymous function discussed above with arrow function
+**Tip** − By convention, the use of a single letter parameter is encouraged for a compact and precise arrow function declaration.
 
-```html
+### Syntax
+```
+//Arrow function that points to a single line of code
 
- <script>
-      const names = ['TutorialsPoint','Mohtashim','Bhargavi','Raja']
-        names.map((element,index)=>{
-           console.log('inside arrow function')
-            console.log('index is '+index+' element value is :'+element)
-        })
+()=>some_expression  
+ 
+```
+OR
 
-</script>
+```
+//Arrow function that points to a block of code
+
+()=> { //some statements }`  
+ 
+```
+OR
+
+```
+//Arrow function with parameters
+
+(param1,param2)=>{//some statement}
 
 ```
 
-the output is shown below
+### Illustration 1: Arrow function in ES6
 
-```html
-inside arrow function
-index is 0 element value is :TutorialsPoint
-inside arrow function
-index is 1 element value is :Mohtashim
-inside arrow function
-index is 2 element value is :Bhargavi
-inside arrow function
-index is 3 element value is :Raja
-```
-
-### Example 3 : setTimeout and arrow function
-
-In this example let us replace anonymous function discussed above with arrow function.
-
-```html
-<script>
- setTimeout(()=>{
-          console.log('Learning at TutorialsPoint is fun!!')
-        },1000)
-</script>
-
-```
-
-output is shown after 1 second
-
-```html
-Learning at TutorialsPoint is fun!!
-```
-
-
-### Example 4
-
-In this case let us see how to declare anonymous functions using arrow function. Two functions `add` ad `isEven` declared and invoked as shown below.
+The following example defines two function expressions `add` and `isEven` using arrow function.
 
 ```html
 <script>
@@ -135,7 +83,7 @@ In this case let us see how to declare anonymous functions using arrow function.
 
 ```
 
-output is shown below
+The output is shown below
 
 ```html
 30
@@ -143,9 +91,59 @@ true
 
 ```
 
+### Illustration 2 : Array.prototype.map() and arrow function
+
+In the following example an arrow function is passed as a parameter to the  `Array.prototype.map() function`. The `map()` function executes the arrow function for each elemnt in the array. The arrow function in this case, displays each elemnt in the array and its syntax.
+
+```html
+
+ <script>
+      const names = ['TutorialsPoint','Mohtashim','Bhargavi','Raja']
+        names.map((element,index)=>{
+           console.log('inside arrow function')
+            console.log('index is '+index+' element value is :'+element)
+        })
+
+</script>
+
+```
+
+The output is shown below
+
+```html
+inside arrow function
+index is 0 element value is :TutorialsPoint
+inside arrow function
+index is 1 element value is :Mohtashim
+inside arrow function
+index is 2 element value is :Bhargavi
+inside arrow function
+index is 3 element value is :Raja
+```
+
+### Illustration 3 : window.setTimeout() and arrow function
+
+The following example passes an arrow function as a parameter to the predefined `setTimeout` function. The `setTimeout` function will callback the arrow function after 1 second.
+
+```html
+<script>
+ setTimeout(()=>{
+          console.log('Learning at TutorialsPoint is fun!!')
+        },1000)
+</script>
+
+```
+
+The following output is shown after 1 second
+
+```html
+Learning at TutorialsPoint is fun!!
+```
+
+
 ## Arrow function and this
 
-Inside an arrow function if we use `this` pointer , it will point to the enclosing lexical scope.This means arrow functions does not create a new `this pointer` instance whenever it is invoked.Arrow functions  makes use of its enclosing scope.To understand this let us see an example given below.
+Inside an arrow function if we use the `this` pointer , it will point to the enclosing lexical scope.This means arrow functions do not create a new `this pointer` instance whenever it is invoked.Arrow functions  makes use of its enclosing scope.To understand this let us see an example given below.
 
 ```html
     <script>
