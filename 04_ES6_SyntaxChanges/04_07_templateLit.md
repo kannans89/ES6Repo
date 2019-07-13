@@ -91,6 +91,8 @@ The total is 150
 ## Tagged Templates
 
  A tag is a function which can interpret and process a template literal. A tag appears in front  of the  template literal.Syntax is shown below.
+ 
+ ### Syntax
 
  ```js
    let output_fromTag = tagFunction `Template literal with ${variable1} , ${variable2}`
@@ -106,7 +108,7 @@ function tagFunction(literals,...variable_values){
 
 ```
 
-## Illustraion 1
+### Illustration
 
 
 ```html
@@ -135,7 +137,7 @@ function tagFunction(literals,...variable_values){
 
 ```
 
-output is : The result from tag function is `Done`
+The result from tag function is `Done`. Output of the above code is given below :
 
 ```js
 literal values are
@@ -150,7 +152,7 @@ literal values are
 ```
 
 
-## Illustraion 2:
+### Illustration
 
 The below tag function takes a template literal and converts it to upper case as shown.
 
@@ -180,4 +182,6 @@ The below tag function takes a template literal and converts it to upper case as
 
 ```
 
-output: `HELLO THIS IS TUTORIALSPOINT FROM MUMBAI`
+Output of the above code is given below: 
+
+`HELLO THIS IS TUTORIALSPOINT FROM MUMBAI`
