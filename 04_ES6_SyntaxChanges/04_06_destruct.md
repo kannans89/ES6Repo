@@ -3,8 +3,27 @@
 
 ## Destructuring an array
 
-We will se how to destructure an array into individual variables.Destructuring helps to unpack values from an array or an object into distinct variables.Destructring assigment syntax exmaple is shown below
+Destructuring refers to extracting individual values from an array or an object into distinct variables. Consider a scenario where the values of an array needs to be assigned to individual variables. The traditional way of doing this is given below : 
 
+```
+var a= array1[0]
+var b= array1[1]
+var c= array1[2]
+
+```
+Destructuring helps to achieve the same in a concise way. 
+
+
+### Syntax 
+
+```
+//destructuring an array
+
+
+//destructuring an object
+```
+
+### Illustration
 
 ```html
 
@@ -40,11 +59,18 @@ We will se how to destructure an array into individual variables.Destructuring h
 
 ```
 
+The output of the above code is : 
+
+```
+
+```
+
+
 ## Destructuring an object
 
-When we destructure an object the variables names and the object property names should match as shown below.
+When destructuring an object the variables names and the object property names must match.
 
-### Example 1:
+### Illustration 
 
 ```html
  <script>
@@ -68,8 +94,13 @@ let student = {
 </script>
 
 ```
+The output of the above code is : 
 
-### Example 2:
+```
+
+```
+
+### Illustration
 
 
 ```html
@@ -135,3 +166,8 @@ console.log(city)
 
 ```
 
+The output of the above code is : 
+
+```
+
+```
