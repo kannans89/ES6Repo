@@ -19,8 +19,12 @@ Destructuring helps to achieve the same in a concise way.
 ```
 //destructuring an array
 
+let [variable1,variable2]=[item1,item2]
 
 //destructuring an object
+
+let {property1,property2} = {property1:value1,property2:value2}
+
 ```
 
 ### Illustration
@@ -28,7 +32,7 @@ Destructuring helps to achieve the same in a concise way.
 ```html
 
 <script>
-     
+
      let names = ['Mohtashim','Kannan','Kiran']
      let [n1,n2,n3] = names;
 
@@ -62,6 +66,15 @@ Destructuring helps to achieve the same in a concise way.
 The output of the above code is : 
 
 ```
+Mohtashim
+Kannan
+Kiran
+Mumbai
+["Hyderabad", "Chennai"]
+Mohtashim
+Kannan
+second is  10
+first is  20
 
 ```
 
@@ -97,11 +110,15 @@ let student = {
 The output of the above code is : 
 
 ```
-
+Prijin
+7.2
+7.2
+student_name Prijin
 ```
 
 ### Illustration
 
+If variable is already declared ,then the destructuring object syntax will  be surrounded by `()` as shown in the example ` ({rollno} = student)`
 
 ```html
   <script>
@@ -117,11 +134,11 @@ The output of the above code is :
    ({rollno} = student)
    console.log(rollno)
 
-  // assign default values to variables 
+  // assign default values to variables
 
   let product ={ id:1001,price:2000} //discount is not product property
 
-  let {id,price,discount=.10} = product 
+  let {id,price,discount=.10} = product
   console.log(id)
   console.log(price)
   console.log(discount)
@@ -129,8 +146,18 @@ The output of the above code is :
 
 ```
 
-### Example 3:
+ouput:
 
+```html
+20
+1001
+2000
+0.1
+```
+
+### Illustration
+
+The below example shows the use of rest operator while destructuring,  how to destruct  nested objects .
 
 ```html
 <script>
@@ -169,5 +196,8 @@ console.log(city)
 The output of the above code is : 
 
 ```
-
+101
+{c2: 102, c3: 103}
+{city: "Mumbai", pin: 1234}
+Mumbai
 ```

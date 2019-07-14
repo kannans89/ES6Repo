@@ -63,6 +63,14 @@ The handler object  contains traps for Proxy.All traps are optional. If a trap h
 
 ```
 
+output is shown below
+
+```
+[10, 20]
+area is  200
+[10]
+Uncaught Invalid no of arguments to calculate
+```
 
 ### Example 2:handler.construct()
 
@@ -99,7 +107,7 @@ The handler object  contains traps for Proxy.All traps are optional. If a trap h
 
 ```
 
-output is
+output is shown below
 
 ```js
 inside construct
@@ -148,7 +156,7 @@ Tutorials : Point
 
 ```
 
-output is shown
+output is shown below
 
 ```html
  Tutorials : Point

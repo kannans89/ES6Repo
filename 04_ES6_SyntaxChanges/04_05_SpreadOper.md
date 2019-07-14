@@ -24,6 +24,10 @@ ES6 provides a new operator called the spread operator.The spread operator is re
 
 Output: 
 
+```js
+sum is : 60
+sum is  6
+```
 
 ### Spread operator and Array copy and concat
 The spread operator can be used to copy one array into another. It can also be used to concatenate two or more arrays.This is shown in the example below: 
@@ -50,9 +54,14 @@ The spread operator can be used to copy one array into another. It can also be u
 
 Output
 
+```html
+[10, 20, 30]
+[10, 20, 30, 40, 50, 60]
+```
 
 
 ### Spread Operator and Object copy and concat
+
 The spread operator can be used to copy one object into another. It can also be used to concatenate two or more objects.This is shown in the example below:
 
 **Illustration**
@@ -73,3 +82,9 @@ The spread operator can be used to copy one object into another. It can also be 
 ```
 
 Output
+
+```html
+{firstName: "Mohtashim", company: "TutorialsPoint"}
+
+{firstName: "Mohtashim", company: "TutorialsPoint", lastName: "Mohammad"}
+```
