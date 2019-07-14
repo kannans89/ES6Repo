@@ -110,6 +110,7 @@ function tagFunction(literals,...variable_values){
 
 ### Illustration
 
+Following illustration defines a tag function `myTagFn` . It displays the  parameters passed to it which are literals and values.After displaying it returns `Done` to the caller.
 
 ```html
 <script>
@@ -137,13 +138,14 @@ function tagFunction(literals,...variable_values){
 
 ```
 
-The result from tag function is `Done`. Output of the above code is given below :
+Output of the above code is given below :
 
 ```js
+//literal
 literal values are
  Hello this is 
   from
-
+//values
  variable values are 
  TutorialsPoint
  Mumbai

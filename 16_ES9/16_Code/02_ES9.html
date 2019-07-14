@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+     <script>
+
+function myTagFn(str) { 
+ return { "cooked": str[0], "raw": str.raw[0] }
+} 
+
+let result1 =myTagFn`\unicode`
+console.log(result1)
+
+let result2 =myTagFn`\u2764\uFE0F`
+console.log(result2)
+        
+    </script>
+
+
+
+
+
+    <script>
+    //     let asyncSquareFn = function(n1){
+            
+    //        return new Promise((resolve,reject)=>{
+    //         setTimeout(()=>{
+    //             if(n1>=0){
+    //            resolve(n1*n1)
+    //             }
+    //             else reject('NOT_POSITIVE_NO')
+    //         },3000)
+    //     })
+    // }
+
+    //     console.log('Start')
+        
+    //     asyncSquareFn(10)
+    //     .then(result=>{
+    //         console.log("result is",result)
+    //     }).catch(error=>console.log(error))
+    //     .finally(() =>{
+    //         console.log("inside finally")
+    //         console.log("executes all the time")
+    //     })
+
+    //     console.log("End");
+    </script>
+
+
+</body>
+</html>
