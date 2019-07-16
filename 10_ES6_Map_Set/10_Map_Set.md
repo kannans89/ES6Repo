@@ -1,7 +1,18 @@
 # Maps and Sets
+ES6 introduces two new data structures- maps and sets.
 
-## Object vs Map
+## Maps
+A map is a collection of key-value pairs. Maps are similar to objects. However, there are some differences between maps and objects. These are listed below : 
 
+//clarify here 
+|#Sr.No |  Object    | Map|
+|:----:|:----------|:-------|
+| 1 |    keys cannot be Object type  | Keys can be any type
+| 2 |   keys are not ordered  | Keys are ordered
+| 3 |   not iterable  | iterable
+
+
+//is this needed?
 Objects are much similar to maps.Since there was no maps available objects were used like maps to store key and value as shown below
 
 ```html
@@ -17,22 +28,19 @@ Objects are much similar to maps.Since there was no maps available objects were 
     </script>
 ```
 
-There are  some difference between map and object.
-
-|#Sr.No |  Object    | Map|
-|:----:|:----------|:-------|
-| 1 |    keys cannot be Object type  | Keys can be any type
-| 2 |   keys are not ordered  | Keys are ordered
-| 3 |   not iterable  | iterable
-
-## Map Syntax
+### Syntax
 
  ```html
    let map= new Map([iterable])
    let map= new Map()
  ```
 
- common methods in map are :
+### Illustration: 
+//create a simple map 
+
+
+
+Following are some common methods that can be used to manipulate maps :
 
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
@@ -46,7 +54,15 @@ There are  some difference between map and object.
 | 8 |    delete(key)  | removes the key from map
 
 
-Example of set using empty constructor
+### set()
+adds key and value to map
+
+**Syntax**
+```
+
+```
+
+**Illustration**
 
 ```html
  <script>
