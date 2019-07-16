@@ -32,7 +32,7 @@ The handler object  contains traps for Proxy.All traps are optional. If a trap h
 |5|handler.has() |A trap for the in operator.
 
 
-### Example 1:handler.apply()
+### Illustration :handler.apply()
 
 
 ```html
@@ -63,7 +63,7 @@ The handler object  contains traps for Proxy.All traps are optional. If a trap h
 
 ```
 
-output is shown below
+The output of the above code is: 
 
 ```
 [10, 20]
@@ -72,7 +72,7 @@ area is  200
 Uncaught Invalid no of arguments to calculate
 ```
 
-### Example 2:handler.construct()
+### Illustration: handler.construct()
 
 
 ```html
@@ -107,7 +107,7 @@ Uncaught Invalid no of arguments to calculate
 
 ```
 
-output is shown below
+The output of the above code is:
 
 ```js
 inside construct
@@ -116,7 +116,7 @@ inside construct
 Tutorials : Point
 ```
 
-### Example 3:handler.set()
+### Illustration :handler.set()
 
 ```html
 
@@ -156,7 +156,7 @@ Tutorials : Point
 
 ```
 
-output is shown below
+The output of the above code is :
 
 ```html
  Tutorials : Point
@@ -167,7 +167,7 @@ output is shown below
 
 ```
 
-### Example 4:handler.get()
+### Illustration:handler.get()
 
 ```html
     <script>
@@ -201,7 +201,7 @@ output is shown below
 
 ```
 
-output is shown below
+The output of the above code is:
 
 ```html
 inside get
@@ -212,7 +212,7 @@ inside get
 POINT
 ```
 
-### Example 5:handler.has()
+### Illustration:handler.has()
 
 
 ```html
@@ -251,7 +251,7 @@ POINT
 
 ```
 
-output is shown below
+The output of the above code is : 
 
 ```html
  inside has
