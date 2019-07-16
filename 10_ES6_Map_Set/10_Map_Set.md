@@ -5,6 +5,8 @@ ES6 introduces two new data structures- maps and sets.
 A map is a collection of key-value pairs. Maps are similar to objects. However, there are some differences between maps and objects. These are listed below : 
 
 //clarify here 
+
+
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
 | 1 |    keys cannot be Object type  | Keys can be any type
@@ -38,7 +40,23 @@ Objects are much similar to maps.Since there was no maps available objects were 
 ### Illustration: 
 //create a simple map 
 
+### Checking size of the map
 
+The size property can be used to determine the number of values stored in the map.
+
+**Syntax**
+```
+```
+
+**Illustration**
+```
+
+```
+ The output of the above code is : 
+ 
+ ```
+ 
+ ```
 
 Following are some common methods that can be used to manipulate maps :
 
@@ -47,11 +65,10 @@ Following are some common methods that can be used to manipulate maps :
 | 1 |    set(key,value)  | adds key and value to map
 | 2 |    get(key)  | returns value if key is matched
 | 3 |    has(key)  | returns true if  key is matched
-| 4 |    size  | returns count of elements in map
-| 5 |    keys()  | returns an iterator to iterate map keys
-| 6 |    values()  | returns an iterator to iterate map values
-| 7 |    entries()  | returns an iterator to an array with keys and values
-| 8 |    delete(key)  | removes the key from map
+| 4 |    keys()  | returns an iterator to iterate map keys
+| 5 |    values()  | returns an iterator to iterate map values
+| 6 |    entries()  | returns an iterator to an array with keys and values
+| 7 |    delete(key)  | removes the key from map
 
 
 ### set()
@@ -149,8 +166,15 @@ returns true if  key is matched
 
 ```
 
-### has()
-Example keys() method
+### keys()
+returns an iterator to iterate map keys
+
+**Synatx**
+```
+
+```
+
+**Illustration**
 
 ```html
    <script>
@@ -170,7 +194,14 @@ Example keys() method
 
 ```
 
-Example values() method
+### values()
+returns an iterator to iterate map values
+
+**Syntax**
+```
+```
+
+**Illustration**
 
 ```html
   
@@ -191,8 +222,14 @@ Example values() method
 
 ```
 
-Example of entries() and delete()
+### entries() 
+returns an iterator to an array with keys and values
 
+**Syntax**
+```
+```
+
+**Illustration**
 
 ```html
  <script>
@@ -210,21 +247,52 @@ Example of entries() and delete()
                   console.log("value is ",row[1])
               }
 
-              empJobs.delete(andy) //deleting an element
+              
+        </script>
+
+```
+
+### delete()
+removes the key from map
+
+**Syntax**
+```
+```
+
+**Illustration**
+
+```html
+ <script>
+                let andy ={ename:"Andrel"},
+                    varun = {ename:"Varun"},
+                    prijin={ename:"Prijin"}
+       
+               let empJobs = new Map([
+               [andy,'Software Architect'],
+               [varun,'Developer']]
+               );
+                
+               empJobs.delete(andy) //deleting an element
               console.log(empJobs)
 
         </script>
 
 ```
 
-
 ## WeakMap
 
-Weakmap is a small subset of map.Keys are weakly referenced , so it can be non primitive only.If there are no reference to the object keys ,it will subject to garbage collection.
+Weakmap is a small subset of map. Keys are weakly referenced , so it can be non primitive only.If there are no reference to the object keys ,it will be subject to garbage collection.
 - not iterable
 - every key is object type
 
 The weak map will allow garbage collection if the key has no reference.
+
+### Syntax
+```
+
+```
+
+### Illustration
 
 ```html
   
@@ -236,6 +304,7 @@ The weak map will allow garbage collection if the key has no reference.
     </script>
 ```
 
+### Illustration
 
 ```html
  
@@ -263,34 +332,71 @@ The weak map will allow garbage collection if the key has no reference.
 
 ## Set
 
-Set datastructure help to store set of unique values both primitive and objects.
+A set is an unordered collection of unique values.This datastructure can contain values of primitive and object types.
 
-syntax 
+### Syntax 
 ```js
  new Set([iterable])
  new Set()
 ```
 
-|#Sr.No |  Object    | Map|
-|:----:|:----------|:-------|
-| 1 |    add(element)  | adds element to set
-| 2 |    has(element)  | returns true if element found
-| 3 |    size  | returns number of elements in set
-| 4 |    delete(element)  | delete specific element
-| 5 |    clear()  | clears all elements in set
+### Illustration
+//simple set 
 
+### Checking the size of a set
 
-Example of add method
+**Syntax**
+```
+```
 
+**Illustration**
+```
+
+```
+
+### Iterating a Set
+
+**Illustration**
 
 ```html
 <script>
 
+   let names= new Set(['A','B','C','D']);
+   
+   //iterate using forEach
+  console.log('forEach')
+  names.forEach(n=>console.log(n))
+    
+  console.log('for of..')
+  
+  //iterate using for..of 
+  for(let n of names){
+        console.log(n)
+    }
 
- 
+The following methods can be used to manipulate a set.
+
+|#Sr.No |  Object    | Map|
+|:----:|:----------|:-------|
+| 1 |    add(element)  | adds an element to set
+| 2 |    has(element)  | returns true if element found
+| 3 |    delete(element)  | delete specific element
+| 4 |    clear()  | clears all elements in set
 
 
-        let s = new Set([{
+### add()
+adds an element to the set
+
+**Syntax**
+```
+```
+
+**Illustration**
+
+```html
+<script>
+
+  let s = new Set([{
             ename:'Smith'
         },{
             ename:'Kannan'
@@ -313,37 +419,71 @@ Example of add method
 
 ```
 
-Other exmaples are shown below
+### has()
+returns true if element found
+
+**Syntax**
+```
+```
+
+**Illustration**
 
 ```html
 <script>
 
-
     let names= new Set(['A','B','C','D']);
     console.log(names.has('B'))
-    console.log(names.size)
-    //iterate
-    names.forEach(n=>console.log(n))
-    
-    console.log('for of..')
-    for(let n of names){
-        console.log(n)
-    }
-   //delete
+
+</script>
+
+```
+
+### delete
+delete specific element
+
+**Syntax**
+```
+```
+
+**Illustration**
+
+```html
+<script>
+
+    let names= new Set(['A','B','C','D']);
+    console.log(names)
     names.delete('A')
+    console.log(names)
+
+</script>
+
+```
+
+### clear()
+clears all elements in set
+
+**Syntax**
+```
+
+```
+
+**Illustration**
+
+```html
+<script>
+
+   let names= new Set(['A','B','C','D']);
    console.log(names)
-
-   //clear
-
    names.clear();
    console.log(names)
+
 </script>
 
 ```
 
 ## Weak Set
 
- Weak sets holds objects only.It holds objects weakly,that meany object held in weak set are subject to garbage collection,if they are not referenced.Not iterable and no get method.
+A Weak set holds objects only.It holds objects weakly,that meany object stored in a weak set are subject to garbage collection,if they are not referenced. Weak Sets are not iterable and do not have the get method.
 
  ```html
     <script>
