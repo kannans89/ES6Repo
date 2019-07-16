@@ -80,6 +80,7 @@ adds key and value to map
 
 ```
 
+**Illustration**
 Example of set uisng the iterable constructor
 
 ```html
@@ -96,8 +97,14 @@ Example of set uisng the iterable constructor
 
 ```
 
-Example of get and has()
+### get()
+returns value if key is matched
 
+**Syntax**
+```
+```
+
+**Illustration**
 ```html
 <script>
                 let andy ={ename:"Andrel"},
@@ -111,12 +118,38 @@ Example of get and has()
                 
               let value = empJobs.get(varun)
               console.log(value)
+             
+              console.log(empJobs.size)
+        </script>
+
+```
+### has()
+returns true if  key is matched
+
+
+**Syntax**
+```
+```
+
+**Illustration**
+```html
+<script>
+                let andy ={ename:"Andrel"},
+                    varun = {ename:"Varun"},
+                    prijin={ename:"Prijin"}
+       
+               let empJobs = new Map([
+               [andy,'Software Architect'],
+               [varun,'Developer']]
+               );
+                
               console.log(empJobs.has(prijin))
               console.log(empJobs.size)
         </script>
 
 ```
 
+### has()
 Example keys() method
 
 ```html
