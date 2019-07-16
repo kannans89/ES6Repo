@@ -2,10 +2,7 @@
 ES6 introduces two new data structures- maps and sets.
 
 ## Maps
-A map is a collection of key-value pairs. Maps are similar to objects. However, there are some differences between maps and objects. These are listed below : 
-
-//clarify here 
-
+A map is an ordered collection of key-value pairs. Maps are similar to objects. However, there are some differences between maps and objects. These are listed below : 
 
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
