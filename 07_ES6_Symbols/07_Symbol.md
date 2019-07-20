@@ -54,11 +54,24 @@ ES6 provides a global symbols registry ,that allows programmers to share Symbols
 |Sr.No |  Name    | Description|
 |:----:|:----------|:-------|
 |1|Symbol.for(key) |searches for existing symbols in a symbol registry with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.
-|2|Symbol.keyFor(sym) | method retrieves a shared symbol key from the global symbol registry for the given symbol.
+|2|Symbol.keyFor(sym) | Retrieves a shared symbol key from the global symbol registry for the given symbol.
+
 
 ### Symbol.for()
 
-This function creates a symbol and adds to registry . If the symbole is already present in the registry it will return the same.Following example shows difference between `Symbol() and Symbol.for()`
+This function creates a symbol and adds to registry . If the symbol is already present in the registry it will return the same;else a new symbol is created in the global symbol registry.
+
+**Syntax**
+```
+Symbol.for(key)
+
+```
+where, 
+*key*  is the identifier of the symbol
+
+**Illustration**
+
+The following example shows the difference between `Symbol() and Symbol.for()`
 
 ```html
 
@@ -83,6 +96,17 @@ false
 ```
 
 ### Symbol.keyFor
+This method retrieves a shared symbol key from the global symbol registry for the given symbol
+
+**Syntax**
+```
+Symbol.keyFor(sym)
+```
+where, 
+*sym* is the symbol to find a key for
+
+
+**Illustration**
 
 ```html
   <script>
@@ -95,17 +119,19 @@ false
 
 ```
 
-output is below
+The output of the code is as given below:
 
 ```js
 userId
 undefined
 ```
 
-### Symbol & Classes
-
+## Symbol & Classes
+//review this 
 Symbol can be used with classes to define the property name of the class.
 The advantage is that if property is a symbol as shown below, outside the package property can be accessed only if symbol names is known. So data is much encapsulated when symbols are used as properties.
+
+**Illustration**
 
 ```html
 <script>
@@ -131,7 +157,7 @@ The advantage is that if property is a symbol as shown below, outside the packag
 
 ```
 
-output is shown below
+The output of the above code is: 
 
 ```js
 Bike {Symbol(): "red", Symbol(): "honda", Symbol(): "cbr"}
@@ -142,5 +168,5 @@ Symbol(): "cbr"
 red
 
 ```
-
+//???
 Since the object keys are of the Symbol type it becomes difficult to access the object properties outside package .
