@@ -1,7 +1,9 @@
 # Symbol
 
-ES6 introduces a new datatype called Symbol and it is a primitive type.
-A symbol is just a piece of memory which you can store some data.Each symbol will point to different memory location , they are  unique and immutable.
+ES6 introduces a new primitive type called Symbol.Symbols are helpful to implement metaprogramming in JavaScript programs.
+//why use symbols??
+
+
 
 ## Syntax
 
@@ -9,6 +11,10 @@ A symbol is just a piece of memory which you can store some data.Each symbol wil
 const mySymbol = Symbol()
 const mySymbol = Symbol(stringDescription)
 ```
+
+A symbol is just a piece of memory which you can store some data.Each symbol will point to a different memory location.Values returned by a Symbol() constructor are  unique and immutable.
+
+## Illustration
 
 Let us understand this through an example.
 First we created two symbols without description , then symbols with same description as `hello` both cases equality operator will return false.
@@ -29,7 +35,7 @@ First we created two symbols without description , then symbols with same descri
 
 ```
 
-output is :
+The output of the above code is :
 
 ```html
 symbol
@@ -42,7 +48,7 @@ false
 
 ## Sharing Symbols
 
-ES6 provides a global symbols registry ,that allows programmers to share Symbols globally.We can add Symbols to registry and reuse them later.This way symbols can be shared.Common methods used are
+ES6 provides a global symbols registry ,that allows programmers to share Symbols globally.We can add Symbols to registry and reuse them later.In this way symbols can be shared. Some common methods associated with Symbols are-
 
 
 |Sr.No |  Name    | Description|
@@ -50,9 +56,9 @@ ES6 provides a global symbols registry ,that allows programmers to share Symbols
 |1|Symbol.for(key) |searches for existing symbols in a symbol registry with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.
 |2|Symbol.keyFor(sym) | method retrieves a shared symbol key from the global symbol registry for the given symbol.
 
-### Example 1:Symbol.for()
+### Symbol.for()
 
-This function creates a symbol and adds to registry . If already present in registry it will return the same.Following example shows difference between `Symbol() and Symbol.for()`
+This function creates a symbol and adds to registry . If the symbole is already present in the registry it will return the same.Following example shows difference between `Symbol() and Symbol.for()`
 
 ```html
 
@@ -69,14 +75,14 @@ This function creates a symbol and adds to registry . If already present in regi
 
 ```
 
-output is : 
+The output of the above code is : 
 
 ```js
 true
 false
 ```
 
-### Example 2:Symbol.keyFor
+### Symbol.keyFor
 
 ```html
   <script>
@@ -96,9 +102,9 @@ userId
 undefined
 ```
 
-### Symbol & class
+### Symbol & Classes
 
-Symbol can be used with class  to define the property name of the class.
+Symbol can be used with classes to define the property name of the class.
 The advantage is that if property is a symbol as shown below, outside the package property can be accessed only if symbol names is known. So data is much encapsulated when symbols are used as properties.
 
 ```html
