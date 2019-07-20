@@ -6,8 +6,8 @@ A map is an ordered collection of key-value pairs. Maps are similar to objects. 
 
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
-| 1 |    keys cannot be Object type  | Keys can be any type
-| 2 |   keys are not ordered  | Keys are ordered
+| 1 |    Keys cannot be Object type  | Keys can be any type
+| 2 |   Keys are not ordered  | Keys are ordered
 | 3 |   not iterable  | iterable
 
 
@@ -34,24 +34,54 @@ Objects are much similar to maps.Since there was no maps available objects were 
    let map= new Map()
  ```
 
-### Illustration: 
-//create a simple map 
+**Illustration**
+
+The following example creates a map using an iterable constructor
+
+```html
+<script>
+                let andy ={ename:"Andrel"},
+                    varun = {ename:"Varun"},
+                    prijin={ename:"Prijin"}
+               let empJobs = new Map([
+               [andy,'Software Architect'],
+               [varun,'Developer']]
+               );
+               console.log(empJobs)
+</script>
+
+```
+
+The output of the above code is : 
+
+```
+
+
+```
 
 ### Checking size of the map
 
 The size property can be used to determine the number of values stored in the map.
 
 **Syntax**
+
 ```
+map_name.size
+
 ```
 
 **Illustration**
 ```
-
+let daysMap = new Map();
+daysMap.set('1', 'Monday');
+daysMap.set('2', 'Tuesday');
+daysMap.set('3', 'Wednesday');
+console.log(daysMap.size);
 ```
  The output of the above code is : 
  
  ```
+ 3
  
  ```
 
@@ -59,22 +89,28 @@ Following are some common methods that can be used to manipulate maps :
 
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
-| 1 |    set(key,value)  | adds key and value to map
-| 2 |    get(key)  | returns value if key is matched
-| 3 |    has(key)  | returns true if  key is matched
-| 4 |    keys()  | returns an iterator to iterate map keys
-| 5 |    values()  | returns an iterator to iterate map values
-| 6 |    entries()  | returns an iterator to an array with keys and values
-| 7 |    delete(key)  | removes the key from map
+| 1 |    set(key,value)  | Adds key and value to map
+| 2 |    get(key)  | Returns value if key is matched
+| 3 |    has(key)  | Returns true if an element with the specified key exists; else returns false
+| 4 |    keys()  | Returns an iterator that contains the keys for each element in the map object
+| 5 |    values()  | Returns an iterator that contains the values for each element in the map object
+| 6 |    entries()  | Returns an iterator that contains the key-value pairs for each element in the Map
+| 7 |    delete(key)  | Removes the specified element from a Map object 
 
 
 ### set()
-adds key and value to map
+Adds key and value to map
 
 **Syntax**
-```
 
 ```
+map_name.set(key, value);
+
+```
+where, 
+*key* is the key of the element to add to the Map object
+
+*value*  is the value of the element to add to the Map object
 
 **Illustration**
 
@@ -94,31 +130,27 @@ adds key and value to map
 
 ```
 
-**Illustration**
-Example of set uisng the iterable constructor
+The output of the above code is :
 
-```html
-<script>
-                let andy ={ename:"Andrel"},
-                    varun = {ename:"Varun"},
-                    prijin={ename:"Prijin"}
-               let empJobs = new Map([
-               [andy,'Software Architect'],
-               [varun,'Developer']]
-               );
-               console.log(empJobs)
-</script>
+```
 
 ```
 
 ### get()
-returns value if key is matched
+Returns value if the key is matched or returns *undefined* if the key is not found
 
 **Syntax**
 ```
+map_name.get(key)
+
 ```
+where, 
+
+*key* is the key of the element to return from the Map object
+
 
 **Illustration**
+
 ```html
 <script>
                 let andy ={ename:"Andrel"},
@@ -137,15 +169,26 @@ returns value if key is matched
         </script>
 
 ```
-### has()
-returns true if  key is matched
+The output of the above code is :
 
+```
+
+```
+
+### has()
+Returns true if an element with the specified key exists; else returns false
 
 **Syntax**
 ```
+myMap.has(key)
+
 ```
+where, 
+
+*key* is the key of the element to test for presence
 
 **Illustration**
+
 ```html
 <script>
                 let andy ={ename:"Andrel"},
@@ -162,12 +205,18 @@ returns true if  key is matched
         </script>
 
 ```
+The output of the above code is :
+
+```
+
+```
 
 ### keys()
-returns an iterator to iterate map keys
+Returns an iterator that contains the keys for each element in the map object
 
-**Synatx**
+**Syntax**
 ```
+map_name.keys()
 
 ```
 
@@ -190,12 +239,19 @@ returns an iterator to iterate map keys
         </script>
 
 ```
+The output of the above code is :
+
+```
+
+```
 
 ### values()
-returns an iterator to iterate map values
+Returns an iterator that contains the values for each element in the map object
 
 **Syntax**
 ```
+map_name.values()
+
 ```
 
 **Illustration**
@@ -219,11 +275,18 @@ returns an iterator to iterate map values
 
 ```
 
+The output of the above code is :
+
+```
+
+```
+
 ### entries() 
-returns an iterator to an array with keys and values
+Returns an iterator that contains the key-value pairs for each element in the Map
 
 **Syntax**
 ```
+map_name.entries()
 ```
 
 **Illustration**
@@ -248,13 +311,23 @@ returns an iterator to an array with keys and values
         </script>
 
 ```
+The output of the above code is :
+
+```
+
+```
 
 ### delete()
-removes the key from map
+Removes the specified element from a Map object 
 
 **Syntax**
 ```
+map_name.delete(key)
 ```
+where, 
+
+*key* is the key of the element to remove from the map
+
 
 **Illustration**
 
@@ -275,7 +348,11 @@ removes the key from map
         </script>
 
 ```
+The output of the above code is :
 
+```
+
+```
 ## WeakMap
 
 Weakmap is a small subset of map. Keys are weakly referenced , so it can be non primitive only.If there are no reference to the object keys ,it will be subject to garbage collection.
@@ -286,6 +363,7 @@ The weak map will allow garbage collection if the key has no reference.
 
 ### Syntax
 ```
+new WeakMap([iterable])
 
 ```
 
@@ -327,6 +405,12 @@ The weak map will allow garbage collection if the key has no reference.
 
 ```
 
+The output of the above code is :
+
+```
+
+```
+
 ## Set
 
 A set is an unordered collection of unique values.This datastructure can contain values of primitive and object types.
@@ -338,15 +422,29 @@ A set is an unordered collection of unique values.This datastructure can contain
 ```
 
 ### Illustration
-//simple set 
+```html
+
+```
+
+The output of the above code is : 
+
+```
+
+```
 
 ### Checking the size of a set
-
+//length or size
 **Syntax**
 ```
 ```
 
 **Illustration**
+```
+
+```
+
+The output of the above code is : 
+
 ```
 
 ```
@@ -370,23 +468,37 @@ A set is an unordered collection of unique values.This datastructure can contain
   for(let n of names){
         console.log(n)
     }
+  
+  The output of the above code is : 
 
-The following methods can be used to manipulate a set.
+```
+
+```
+
+The following methods can be used to manipulate a set:
+
 
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
-| 1 |    add(element)  | adds an element to set
-| 2 |    has(element)  | returns true if element found
-| 3 |    delete(element)  | delete specific element
-| 4 |    clear()  | clears all elements in set
+| 1 |  add(element)  | Adds an element to the Set
+| 2 |  has(element)  | Returns true if element found;else returns false
+| 3 |  delete(element)  | Delete specific element from the Set
+| 4 |  clear()  | Clears all elements from the Set
 
 
 ### add()
-adds an element to the set
+
+Adds an element to the set
 
 **Syntax**
 ```
+set_name.add(value)
+
 ```
+where
+
+*value* is the value to add to the Set
+
 
 **Illustration**
 
@@ -407,21 +519,27 @@ adds an element to the set
         students.add('Kannan') //chaining
                 .add('Raj')
                 .add('Koshy')
-                .add('Sudhakaran');
-
-     
-        
+                .add('Sudhakaran');  
 
     </script>
 
 ```
+The output of the above code is : 
 
+```
+
+```
 ### has()
-returns true if element found
+Returns true if element found;else returns false
 
 **Syntax**
 ```
+set_name.has(value)
+
 ```
+where,
+
+*value* is the value to search for in the Set
 
 **Illustration**
 
@@ -434,13 +552,23 @@ returns true if element found
 </script>
 
 ```
+The output of the above code is : 
+
+```
+
+```
 
 ### delete
-delete specific element
+Delete specific element from the Set
 
 **Syntax**
 ```
+set_name.delete(value)
+
 ```
+where,
+
+*value* is the value to delete from the Set
 
 **Illustration**
 
@@ -455,12 +583,18 @@ delete specific element
 </script>
 
 ```
+The output of the above code is : 
+
+```
+
+```
 
 ### clear()
-clears all elements in set
+Clears all elements from the Set
 
 **Syntax**
 ```
+set_name.clear()
 
 ```
 
@@ -477,6 +611,11 @@ clears all elements in set
 </script>
 
 ```
+The output of the above code is : 
+
+```
+
+```
 
 ## Weak Set
 
@@ -484,8 +623,6 @@ A Weak set holds objects only.It holds objects weakly,that meany object stored i
 
  ```html
     <script>
-
-
 
  let e1 = {ename:'A'}
  let e2 ={ename:'B'}
@@ -503,3 +640,9 @@ console.log(emps)
 </script>
 
  ```
+ 
+ The output of the above code is : 
+
+```
+
+```
