@@ -54,9 +54,8 @@ The following example creates a map using an iterable constructor
 
 The output of the above code is : 
 
-```
-
-
+```js
+{{…} => "Software Architect", {…} => "Developer"}
 ```
 
 ### Checking size of the map
@@ -71,12 +70,14 @@ map_name.size
 ```
 
 **Illustration**
-```
+```html
+<script>
 let daysMap = new Map();
 daysMap.set('1', 'Monday');
 daysMap.set('2', 'Tuesday');
 daysMap.set('3', 'Wednesday');
 console.log(daysMap.size);
+</script>
 ```
  The output of the above code is : 
  
@@ -132,8 +133,8 @@ where,
 
 The output of the above code is :
 
-```
-
+```js
+{{…} => "Programmer", {…} => "Accountant", {…} => "HR"}
 ```
 
 ### get()
@@ -171,7 +172,9 @@ where,
 ```
 The output of the above code is :
 
-```
+```js
+Developer
+ 2
 
 ```
 
@@ -207,8 +210,9 @@ where,
 ```
 The output of the above code is :
 
-```
-
+```js
+false
+2
 ```
 
 ### keys()
@@ -241,8 +245,9 @@ map_name.keys()
 ```
 The output of the above code is :
 
-```
-
+```js
+Andrel
+Varun
 ```
 
 ### values()
@@ -277,8 +282,9 @@ map_name.values()
 
 The output of the above code is :
 
-```
-
+```js
+Software Architect
+Developer
 ```
 
 ### entries() 
@@ -314,7 +320,10 @@ map_name.entries()
 The output of the above code is :
 
 ```
-
+key is  {ename: "Andrel"}
+value is  Software Architect
+key is  {ename: "Varun"}
+value is  Developer
 ```
 
 ### delete()
@@ -350,8 +359,8 @@ where,
 ```
 The output of the above code is :
 
-```
-
+```js
+ {{…} => "Developer"}
 ```
 ## WeakMap
 
@@ -407,7 +416,11 @@ new WeakMap([iterable])
 
 The output of the above code is :
 
-```
+```js
+{{…} => 1002, {…} => 1003, {…} => 1001}
+1002
+true
+{{…} => 1002, {…} => 1003}
 
 ```
 
@@ -423,12 +436,17 @@ A set is an unordered collection of unique values.This datastructure can contain
 
 ### Illustration
 ```html
+<script>
+ let names= new Set(['A','B','C','D']);
+    console.log(names)
+</script>
 
 ```
 
 The output of the above code is : 
 
-```
+```js
+{"A", "B", "C", "D"}
 
 ```
 
@@ -436,17 +454,22 @@ The output of the above code is :
 //length or size
 **Syntax**
 ```
+set.size
 ```
 
 **Illustration**
-```
+```html
+ <script>
+    let names= new Set(['A','B','C','D']);
+    console.log(names.size)
 
+ </script>
 ```
 
 The output of the above code is : 
 
-```
-
+```js
+4
 ```
 
 ### Iterating a Set
@@ -468,15 +491,25 @@ The output of the above code is :
   for(let n of names){
         console.log(n)
     }
-  
+  </script>
+  ```
   The output of the above code is : 
 
-```
+```js
+forEach
+A
+B
+C
+D
+for of..
+A
+B
+C
+D
 
 ```
 
 The following methods can be used to manipulate a set:
-
 
 |#Sr.No |  Object    | Map|
 |:----:|:----------|:-------|
@@ -520,15 +553,17 @@ where
                 .add('Raj')
                 .add('Koshy')
                 .add('Sudhakaran');  
-
+        console.log(students)
     </script>
 
 ```
 The output of the above code is : 
 
+```js
+ {{…}, {…}}
+ {"Varun", "Prijin", "Navya", "Kannan", "Raj", …}
 ```
 
-```
 ### has()
 Returns true if element found;else returns false
 
@@ -554,8 +589,8 @@ where,
 ```
 The output of the above code is : 
 
-```
-
+```js
+true
 ```
 
 ### delete
@@ -585,8 +620,9 @@ where,
 ```
 The output of the above code is : 
 
-```
-
+```js
+{"A", "B", "C", "D"}
+{"B", "C", "D"}
 ```
 
 ### clear()
@@ -613,8 +649,9 @@ set_name.clear()
 ```
 The output of the above code is : 
 
-```
-
+```js
+ {"A", "B", "C", "D"}
+ {}
 ```
 
 ## Weak Set
@@ -643,6 +680,8 @@ console.log(emps)
  
  The output of the above code is : 
 
-```
-
+```js
+WeakSet {{…}, {…}, {…}}
+ true
+WeakSet {{…}, {…}}
 ```
