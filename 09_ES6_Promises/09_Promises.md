@@ -28,7 +28,7 @@ where,
 *reject* is the function that should be called when the promise encounters an error
 
 ## Illustration
-The below example shows a function `add_positivenos_async()` which add two numbers asynchronously .If positvie values are passed pormise is resolved adn if negatives are passed promise is rejected.
+The below example shows a function `add_positivenos_async()` which add two numbers asynchronously .The promise is resolved if positive values are passed . The promise is rejected if negative values are passed.
 
 ```html
  <script>
@@ -81,7 +81,7 @@ Promises chaining can be used when we have a sequence of asynchronous tasks to b
 
 ### Illustration
 
-In the below example `add_positivenos_async()` function adds two numbers asynchronously and rejects if negative values are passed.The result from first call to `add_positivenos_async(10,20)` is 30 , it is used to chain next call which is `add_positivenos_async(30,30)` .Subsequent calls are made from result from previous promise call.Note each `then()` method have a `return` statement.
+In the below example `add_positivenos_async()` function adds two numbers asynchronously and rejects if negative values are passed.The result from first call to `add_positivenos_async(10,20)` is 30 , it is used to chain next call which is `add_positivenos_async(30,30)`. The result from the previous asynchronous function call is passed as parameter during the subsequent function calls.Note each `then()` method have a `return` statement.
 
 ```html
  
@@ -125,9 +125,17 @@ second result 60
 third result 120
 ```
 
-**promise.all()**
+Some common used methods of the promise object are : 
 
-The below example executes an array of asynchronous operations `[add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)]` ,when all the operations are completed promise is fully resolved.
+
+## promise.all()
+
+### Syntax
+
+### Illustration 
+
+The below example executes an array of asynchronous  operations `[add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)]`.
+When all the operations are completed the promise is fully resolved.
 
 ```html
  <script>
@@ -162,7 +170,7 @@ The below example executes an array of asynchronous operations `[add_positivenos
 ```
 
 
-output is shown
+The output is as shown below: 
 
 ```js
 end
@@ -173,9 +181,13 @@ all add operations done
 
 ```
 
-**promise.race()**
+## promise.race()
 
-The below example takes an array `[add_positivenos_async(10,20),add_positivenos_async(30,40)]` of asynchronous operations .Which ever add operation completes first will be resolved.This will not wait for all asynchronous operations to complete
+### Syntax
+
+### Illustration
+
+The below example takes an array `[add_positivenos_async(10,20),add_positivenos_async(30,40)]` of asynchronous operations. The promise is resolved whenever any one of the add operation completes. The promise will not wait for other asynchronous operations to complete.
 
 ```html
 <script>
@@ -206,7 +218,7 @@ function add_positivenos_async(n1, n2) {
             </script>
 ```
 
-output is shown
+The output is as shown below:
 
 ```js
 end
