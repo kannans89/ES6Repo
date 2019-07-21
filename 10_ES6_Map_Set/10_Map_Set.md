@@ -11,22 +11,6 @@ A map is an ordered collection of key-value pairs. Maps are similar to objects. 
 | 3 |   not iterable  | iterable
 
 
-//is this needed?
-Objects are much similar to maps.Since there was no maps available objects were used like maps to store key and value as shown below
-
-```html
-  <script>
-        //key and values using object
-        let customer = {
-            id:101, //id is key , 101 is value
-            name:'Kannan',
-            location:'Chennai'
-        }
-        console.log(customer['location']) 
-        console.log(customer['name'])
-    </script>
-```
-
 ### Syntax
 
  ```html
@@ -451,7 +435,8 @@ The output of the above code is :
 ```
 
 ### Checking the size of a set
-//length or size
+The size property of the Set object can be used to query the number of elements in the Set.
+
 **Syntax**
 ```
 set.size
@@ -473,6 +458,7 @@ The output of the above code is :
 ```
 
 ### Iterating a Set
+We can use the forEach and for..of loops to iterate through a Set.This is shown in the example below. 
 
 **Illustration**
 
