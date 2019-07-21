@@ -1,9 +1,6 @@
 # Symbol
 
 ES6 introduces a new primitive type called Symbol.Symbols are helpful to implement metaprogramming in JavaScript programs.
-//why use symbols??
-
-
 
 ## Syntax
 
@@ -127,9 +124,8 @@ undefined
 ```
 
 ## Symbol & Classes
-//review this 
-Symbol can be used with classes to define the property name of the class.
-The advantage is that if property is a symbol as shown below, outside the package property can be accessed only if symbol names is known. So data is much encapsulated when symbols are used as properties.
+
+Symbol can be used with classes to define the properties in class.The advantage is that if property is a symbol as shown below, the  property can be accessed outside the package only if the symbol name is known. So data is much encapsulated when symbols are used as properties.
 
 **Illustration**
 
@@ -168,5 +164,3 @@ Symbol(): "cbr"
 red
 
 ```
-//???
-Since the object keys are of the Symbol type it becomes difficult to access the object properties outside package .
