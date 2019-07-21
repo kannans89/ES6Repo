@@ -1,9 +1,14 @@
 # Promise
+Promises are a clean way to implement async programming in JavaScript (ES6 new feature). Promises help you to execute  multiple async operations together in a much cleaner code style as compared to function callbacks.Promise as the name says, promises to return data in future and not at the current moment.Functions which return promises perform operations that may take a while to execute.
+A Promise object has three states :
+- *pending* :  initial state, neither fulfilled nor rejected
+- *resolved* : meaning that the operation completed successfully
+- *rejected* : meaning that the operation failed
 
-Promise is a  way to write asyncrhonous functions in javascript. Promise as the name says promises to return data in future and not at the current moment.So functions which returns promises are supposed to be doing operations that may take a while to execute.Promise have three states pending,resolved,rejected. A proise is settled when it is resolved or rejected.
+A promise is completed when it is resolved or rejected.
 
 
-Syntax:
+## Syntax:
 ```js
  let p =new Promise(function(resolve,reject){
      let workDone=true; // some time consuming work
@@ -16,8 +21,14 @@ Syntax:
       }
  })
 ```
+where, 
 
-## Example 1:
+*p* is the promise object
+*resolve* is the function  that should be called when the promise executes successfully
+*reject* is the function that should be called when the promise encounters an error
+
+## Illustration
+//descrioption here....
 
 ```html
  <script>
@@ -57,8 +68,19 @@ Syntax:
     </script>
 
 ```
+The output of the above code is : 
 
-## Chaining of promises
+```
+
+```
+
+## Promises Chaining
+Promises chaining can be used when we have a sequence of asynchronous tasks to be done one after another. Promises are chained when a promise depends on the result of another promise. This is shown in the example below: 
+
+### Illustration
+
+//description... 
+
 
 ```html
  
@@ -93,7 +115,11 @@ Syntax:
             </script>
 
 ```
+The output of the above code is : 
 
+```
+
+```
 
 //promise.all()
 //promise.race()
