@@ -28,7 +28,7 @@ where,
 *reject* is the function that should be called when the promise encounters an error
 
 ## Illustration
-//descrioption here....
+The below example shows a function `add_positivenos_async()` which add two numbers asynchronously .If positvie values are passed pormise is resolved adn if negatives are passed promise is rejected.
 
 ```html
  <script>
@@ -71,7 +71,9 @@ where,
 The output of the above code is : 
 
 ```
-
+end
+Handling success 30
+Handling error NOT_Postive_Number_Passed
 ```
 
 ## Promises Chaining
@@ -79,8 +81,7 @@ Promises chaining can be used when we have a sequence of asynchronous tasks to b
 
 ### Illustration
 
-//description... 
-
+In the below example `add_positivenos_async()` function adds two numbers asynchronously and rejects if negative values are passed.The result from first call to `add_positivenos_async(10,20)` is 30 , it is used to chain next call which is `add_positivenos_async(30,30)` .Subsequent calls are made from result from previous promise call.Note each `then()` method have a `return` statement.
 
 ```html
  
@@ -118,8 +119,98 @@ Promises chaining can be used when we have a sequence of asynchronous tasks to b
 The output of the above code is : 
 
 ```
+end
+first result 30
+second result 60
+third result 120
+```
+
+**promise.all()**
+
+The below example executes an array of asynchronous operations `[add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)]` ,when all the operations are completed promise is fully resolved.
+
+```html
+ <script>
+  
+                function add_positivenos_async(n1, n2) {
+                    let p = new Promise(function (resolve, reject) {
+                        if (n1 >= 0 && n2 >= 0) {
+                            //do some complex time consuming work
+                            resolve(n1 + n2)
+                        }
+                        else
+                            reject('NOT_Postive_Number_Passed')
+        
+                    })
+        
+                    return p;
+                }
+              //Promise.all(iterable)
+               Promise.all([add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)])
+               .then(function(resolveValue){
+                  console.log(resolveValue[0])
+                  console.log(resolveValue[1])
+                  console.log(resolveValue[2])
+                  console.log('all add operations done')
+               })
+               .catch(function(err){
+                   console.log('Error',err)
+               })
+              console.log('end')
+ </script>
 
 ```
 
-//promise.all()
-//promise.race()
+
+output is shown
+
+```js
+end
+30
+70
+110
+all add operations done
+
+```
+
+**promise.race()**
+
+The below example takes an array `[add_positivenos_async(10,20),add_positivenos_async(30,40)]` of asynchronous operations .Which ever add operation completes first will be resolved.This will not wait for all asynchronous operations to complete
+
+```html
+<script>
+function add_positivenos_async(n1, n2) {
+                    let p = new Promise(function (resolve, reject) {
+                        if (n1 >= 0 && n2 >= 0) {
+                            //do some complex time consuming work
+                            resolve(n1 + n2)
+                        }
+                        else
+                            reject('NOT_Postive_Number_Passed')
+        
+                    })
+        
+                    return p;
+                }
+        
+                      //Promise.race(iterable)
+               Promise.race([add_positivenos_async(10,20),add_positivenos_async(30,40)])
+               .then(function(resolveValue){
+                  console.log('one of them is done')
+                  console.log(resolveValue)
+
+               }).catch(function(err){
+                   console.log("Error",err)
+               })
+                console.log('end')
+            </script>
+```
+
+output is shown
+
+```js
+end
+one of them is done
+30
+
+```
