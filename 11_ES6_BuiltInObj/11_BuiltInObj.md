@@ -159,19 +159,23 @@ NaN
 10
 NaN
 ```
+
 ## Math
+
+|Sr.No |  method    | description|
+|:----:|:----------|:-------|
+| 1 |   Math.sign()  |  function returns the sign of a number, indicating whether the number is positive, negative or zero.
+| 2 |   Math.trunc()  |  function returns the integer part of a number by removing any fractional digits.
+
 
 ```html
  <script>
         
-        console.log(Math.sign(-Infinity)) // -1
-        console.log(Math.sign(-10)) // -1
+        console.log(Math.sign(-Infinity)) //       console.log(Math.sign(-10)) // -1
         console.log(Math.sign(0)) // 0
         console.log(Math.sign(Infinity)) // 1
-        console.log(Math.sign(10)) // 1
-
-        console.log(Math.sign(NaN)) // NaN
-
+   console.log(Math.sign(10)) // 1
+     console.log(Math.signN)) // NaN
         console.log(Math.trunc(-3.5)) // -3
         console.log(Math.trunc(-3.6)) // -3
         console.log(Math.trunc(3.5)) // 3
@@ -180,36 +184,101 @@ NaN
 
 ```
 
+output is shown below:
+
+```js
+-1
+-1
+0
+1
+1
+NaN
+-3
+-3
+3
+3
+```
+
 ## Array
 
- Array.from() method creates a shallow copy from an array like or iterable object.
+|Sr.No |  method    | description|
+|:----:|:----------|:-------|
+| 1 |   copyWithin()  |   shallow copies part of an array to another location in the same array and returns it without modifying its length..
+| 2 |   entries()  |  method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
+| 3 |   find()  |  method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+| 4 |   fill()  |   method fills all the elements of an array from a start index to an end index  with a static value. It returns the modified array.
+| 5 |   Array.from()  |  method creates a shallow copy from an array like or iterable object.
+| 6 |   Array.of()  |  method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
 
- ```html
+
+**copyWithin**
+
+```html
  <script>
-
+  
       //copy with in
         let marks = [10,20,30,40,50,60]
        console.log(marks.copyWithin(0,2,4)) //destination,source start,source end(excluding)
        console.log(marks.copyWithin(2,4))//destination,source start,(till length)
+ </script>
 
-      /*
+```
+
+output is :
+
+```js
+ [30, 40, 30, 40, 50, 60]
+ [30, 40, 50, 60, 50, 60]
+```
+
+**entries**
+
+```html
+  <script>
+  
       //enties
       let cgpa_list = [7.5,8.5,6.5,9.5]
       let iter = cgpa_list.entries()
       for(let cgpa of iter){
           console.log(cgpa[1])
-      }*/
+      }
 
-    /*
+  </script>
+```
 
-       //find
+output is :
+
+```js
+7.5
+8.5
+6.5
+9.5
+
+```
+
+**find**
+
+ ```html
+   <script> 
+        //find
        const products = [{name:'Books',quantity:10},
        {name:'Pen',quantity:20},
        {name:"Books",quantity:30}
     
     ]
       console.log( products.find(p=>p.name==="Books"))
-        //fill
+
+    </script>
+ ```
+
+ output:`{name: "Books", quantity: 10}`
+
+
+**fill**
+
+  ```html
+    <script>
+            //fill
 
         let nosArr = [10,20,30,40]
         console.log(nosArr.fill(0,1,3))// value ,start,end
@@ -218,22 +287,44 @@ NaN
        console.log(nosArr.fill(0,1)) // [10,0,0,0]
        console.log(nosArr.fill(0))
 
+    </script>
 
+  ```
 
+  output is:
+
+  ```js
+[10, 0, 0, 40]
+[10, 0, 0, 0]
+[0, 0, 0, 0]
+
+  ```
+
+  **Array.of**
+
+  ```ht   <script>
+         
         //Array.of
-
-        console.log(Array.of(10))
-        console.log(Array.of(10,20,30))
+    console.log(Array.of(10))      console.log(Array.of(10,20,30)) 
+       console.log(Array(3))
+       console.log(Array(10,20,30))
         
-        console.log(Array(3))
-        console.log(Array(10,20,30))
-        
+     </script>
+  ```
+ output is :
 
+   ```js
+  [10]
+ [10, 20, 30]
+ [empty × 3]
+ [10, 20, 30]
 
+   ```
 
+**Array.from**
 
-
-
+```html
+ <script>
        //Array.from
          //iterate over an object
 
@@ -255,23 +346,50 @@ NaN
 
         console.log(Array.from([10,20,30,40],n=>n+1))
 
-        */
     </script>
 
+
+ ```
+ 
+ output is :
+
+ ```js
+ {0: 101, 1: "kannan", length: 2}
+ [101, "kannan"]
+ 101
+ kannan
+ ["J", "a", "v", "a", "s", "c", "r", "i", "p", "t"]
+ ["Training", 10, 20]
+ [11, 21, 31, 41]
 
  ```
 
 ## Object
 
+|Sr.No |  method    | description|
+|:----:|:----------|:-------|
+| 1| Object.is()| method determines whether two values are the same value
+| 2| Object.setPrototypeOf()| method sets the prototype of a specified object to another object or null.
+| 3| Object.assign()| method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
 
 ```html
- <script>
-         //Object.is()
+   <script>
+       //Object.is()
 
          let emp1 ={ename:'Prijin'}
          let emp2 ={ename:'Prijin'}
 
          console.log(Object.is(emp1.ename,emp2.ename))
+   </script>
+```
+
+output: `true`
+
+**Object.setPrototypeOf**
+
+```html
+ <script>
+        
 
         //Object.setPrototypeOf(destination,source)
         let emp ={name:'A',location:'Mumbai',basic:5000}
@@ -284,7 +402,29 @@ NaN
         console.log(mgr.__proto__ == Object.prototype) //false
         console.log(mgr.__proto__ === emp)
         console.log(mgr.location,mgr.basic)
-       
+      
+
+    </script>
+
+
+```
+
+output is:
+
+```js
+true
+true
+true
+false
+true
+Mumbai 5000
+
+```
+
+ **object.assign**
+```html
+ <script>
+   
         //Object.assign()
         let obj1 ={x:10},
             obj2={y:20},
@@ -292,8 +432,9 @@ NaN
         
         Object.assign(obj1,obj2,obj3)
         console.log("obj 1",obj1)
-
-    </script>
-
+ </script>
 
 ```
+
+output is : `obj 1 {x: 10, y: 20, z: 30}`
+
