@@ -2,56 +2,128 @@
 
 ## String extension
 
-Popular methods added in string are:
+Some popular methods added to the String object are:
 
 
 |#Sr.No |  method    | description|
 |:----:|:----------|:-------|
 | 1 |   str.startsWith(searchString[, position])  | determines whether a string begins with the characters of a specified string.Returns true or false
 | 2 |   str.endsWith(searchString[, length]) |  determines whether a string ends with the characters of a specified string.Returns true/false
-| 3 |   tr.includes(searchString[, position]) |  determines whether one string may be found within another string
+| 3 |   str.includes(searchString[, position]) |  determines whether one string may be found within another string
 | 4|   str.repeat(count)  |  constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
+
+### String.prototype.startsWith()
+Determines whether a string begins with the characters of a specified string.This function returns true or false.
+
+**Syntax**
+
+```
+str.startsWith(searchString[, position])
+
+```
+where, 
+
+*searchString* is the characters to be searched for at the start of this string.
+*position*  is an optional parameter. It represents the position in this string at which to begin searching for searchString. The default value is 0.
+
+**Illustration**
+
+```
+let company='TutorialsPoint'
+console.log(company.startsWith('Tutorial'))
+console.log(company.startsWith('orial',3)) // 3 is index
+
+```
+The output of the above code is: 
+
+```
+
+```
+
+### String.prototype.endsWith()
+Determines whether a string ends with the characters of a specified string.This function returns true or false.
+
+**Syntax**
+```
+str.endsWith(searchString[, length])
+
+```
+where,
+
+*searchString* is the characters to be searched for at the end of this string.
+*length*  is an optional parameter. It represents the he length of str.
+
+## Illustration
 
 ```html
 <script>
         let company='TutorialsPoint'
-        console.log(company.startsWith('Tutorial'))
         console.log(company.endsWith('Point'));
-        console.log(company.includes('orial'))
-        //with parameter
-
-        console.log(company.startsWith('orial',3)) // 3 is index
         console.log(company.endsWith('Tutor',5))//5 is length of string
+</script>
+```
 
+The output of the above code  is :
+
+```js
+
+```
+
+### String.prototype.includes()
+Determines whether one string may be found within another string
+
+**Syntax**
+```
+str.includes(searchString[, position])
+
+```
+where, 
+
+*searchString* is a string to be searched for within this string
+*position*  is an optional parameter. It represents the position in this string at which to begin searching for searchString. The default value is 0.
+
+**Illustration**
+```
+<script>
+let company='TutorialsPoint'
+console.log(company.includes('orial'))
+console.log(company.includes('orial',4))
+</script>
+```
+
+The output of the above code is : 
+
+```
+
+```
+
+
+### String.prototype.repeat()
+Constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
+
+**Syntax**
+```
+str.repeat(count)
+
+```
+where, 
+
+*count* indicates the number of times to repeat the string in the newly-created string that is to be returned.
+
+**Illustration**
+```
+<script>
+        let name="Kiran-"
+        console.log(name.repeat(3));
 
     </script>
 ```
 
-output is :
-
-```js
-true
-true
-true
-true
-true
-```
-
-The repeat method repeats the string and concatenates together as per the specified times .
-
-```html
-<script>
-  //   //repeat method
-
-       let name="Kiran-"
-      console.log(name.repeat(3));
-</script>
-
-```
-ouput:
+The output of the above code is : 
 
 ```
 Kiran-Kiran-Kiran-
+
 ```
 
 ## Regex extensions
