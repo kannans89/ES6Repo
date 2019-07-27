@@ -33,12 +33,12 @@ The handler object  contains traps for Proxy.All traps are optional. If a trap h
 
 
 ### Illustration :handler.apply()
-
+The following example defines a function `rectangleArea`, which takes width and height as parameters and returns the area of the rectangle. The program creates a proxy and defines a handler object for the `rectangleArea` function. This handler object verifies the number of parameters passed to the function before the function is executed. The handler object throws an error if two parameters are not passed to the function.
 
 ```html
 
     <script>
-        const rectangleArea = function(width,height){
+        function rectangleArea(width,height){
             return width*height;
         }
 
@@ -73,11 +73,11 @@ Uncaught Invalid no of arguments to calculate
 ```
 
 ### Illustration: handler.construct()
-
+The following example defines a class `Student` with a constructor and a getter method. The constructor  takes firstName and lastName as parameters.The program creates a proxy and defines a handler object to intercept the constructor. The handler object verifies the number of parameters passed to the constructor. The handler object throws an error if exactly two parameters are not passed to the constructor.
 
 ```html
   <script>
-         class Student{
+            class Student{
           constructor(firstName,lastName){
               this.firstName = firstName
               this.lastName = lastName
@@ -90,17 +90,20 @@ Uncaught Invalid no of arguments to calculate
 
       const handler = {
           construct:function(target,args){
-              console.log("inside construct")
-              return Reflect.construct(target,args);
+
+            if(args.length==2)
+            {
+                return Reflect.construct(target,args);
+            }
+                else throw 'Please enter First name and Last name'                       
           }
       }
 
     const StudentProxy = new Proxy(Student,handler)
     const s1 = new StudentProxy('kannan','sudhakaran')
     console.log(s1.fullName)
-    const s2 = new StudentProxy('Tutorials','Point')
+    const s2 = new StudentProxy('Tutorials')
     console.log(s2.fullName)
-
 
     </script>
 
@@ -110,64 +113,12 @@ Uncaught Invalid no of arguments to calculate
 The output of the above code is:
 
 ```js
-inside construct
 kannan : sudhakaran
-inside construct
-Tutorials : Point
-```
-
-### Illustration :handler.set()
-
-```html
-
-<script>
-         class Student{
-          constructor(firstName,lastName){
-              this.firstName = firstName
-              this.lastName = lastName
-          }
-
-          get fullName(){
-              return `${this.firstName} : ${this.lastName}`
-          }
-      }
-
-      const handler = {
-
-          set: function(target,property,value){
-              console.log("inside set")
-              if(value.length>=3){
-                return Reflect.set(target,property,value);
-              }
-                else
-                { throw 'string length should be greater than or equal 3'
-                }
-          }
-      }
-
-       const s1 = new Student("Tutorials","Point")
-       const proxy = new Proxy(s1,handler)
-       console.log(proxy.fullName)
-       proxy.firstName="TUTORIALS"
-       console.log(proxy.fullName)
-       proxy.lastName="P"
-
-    </script>
-
-```
-
-The output of the above code is :
-
-```html
- Tutorials : Point
- inside set
- TUTORIALS : Point
- inside set
- Uncaught string length should be greater than or equal 3
-
+Uncaught Please enter First name and Last name
 ```
 
 ### Illustration:handler.get()
+The following example defines a class `Student` with a constructor and a custom getter method,`fullName`. The custom getter method returns a new string by concatenating the firstName and lastName.The program creates a proxy and defines a handler object intercepts whenever the properties firstName,lastName and fullName are accessed. The property values will be returned in uppercase. 
 
 ```html
     <script>
@@ -185,7 +136,6 @@ The output of the above code is :
       const handler = {
 
           get: function(target,property){
-              console.log("inside get")
              return Reflect.get(target,property).toUpperCase();
           }
       }
@@ -204,20 +154,19 @@ The output of the above code is :
 The output of the above code is:
 
 ```html
-inside get
 TUTORIALS : POINT
-inside get
 TUTORIALS
-inside get
 POINT
 ```
 
-### Illustration:handler.has()
 
+
+### Illustration :handler.set()
+The following example defines a class `Student` with a constructor and a custom getter method,`fullName`. The constructor  takes firstName and lastName as parameters.The program creates a proxy and defines a handler object which intercepts all set operations on  firstName and lastName. The handler object throws an error if the length of the property value is not greater than 2.
 
 ```html
 
-    <script>
+<script>
          class Student{
           constructor(firstName,lastName){
               this.firstName = firstName
@@ -230,10 +179,58 @@ POINT
       }
 
       const handler = {
+
+          set: function(target,property,value){
+              
+              if(value.length>2){
+                return Reflect.set(target,property,value);
+              }
+                else
+                { throw 'string length should be greater than 2'
+                }
+          }
+      }
+
+       const s1 = new Student("Tutorials","Point")
+       const proxy = new Proxy(s1,handler)
+       console.log(proxy.fullName)
+       proxy.firstName="Test"
+       console.log(proxy.fullName)
+       proxy.lastName="P"
+
+    </script>
+
+```
+
+The output of the above code is :
+
+```html
+ Tutorials : Point
+ Test : Point
+ Uncaught string length should be greater than 2
+
+```
+
+### Illustration:handler.has()
+The following example defines a class `Student` with a constructor that takes firstName and lastName as parameters.The program creates a proxy and defines a handler object . The `has` method of the handler object is called whenever the `in` operator is used.
+
+```html
+
+    <script>
+         class Student{
+          constructor(firstName,lastName){
+              this.firstName = firstName
+              this.lastName = lastName
+          }
+
+          
+      }
+
+      const handler = {
        
 
           has: function(target,property){
-              console.log('inside has')
+              console.log('Checking  for '+property+' in the object')
              return Reflect.has(target,property)
                
           }
@@ -241,8 +238,6 @@ POINT
 
        const s1 = new Student("Tutorials","Point")
        const proxy = new Proxy(s1,handler)
-       console.log('fullName' in proxy)
-       console.log('fullname' in proxy)
        console.log('firstName' in proxy)
       
 
@@ -254,11 +249,7 @@ POINT
 The output of the above code is : 
 
 ```html
- inside has
- true
- inside has
- false
- inside has
+ Checking  for firstName in the object
  true
 
 ```
