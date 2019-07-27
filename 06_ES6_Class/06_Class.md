@@ -7,11 +7,11 @@ To begin with, let us understand
 
 - Object : An object is a real-time representation of any entity. According to Grady Brooch, every object is said to have 3 features −
 
-- State : Described by the attributes of an object.
+   - State : Described by the attributes of an object.
 
-- Behavior:  Describes how the object will act.
+   - Behavior:  Describes how the object will act.
 
-- Identity: A unique value that distinguishes an object from a set of similar such objects.
+   - Identity: A unique value that distinguishes an object from a set of similar such objects.
 
 - Class:  A class in terms of OOP is a blueprint for creating objects. A class encapsulates data for the object.
 
