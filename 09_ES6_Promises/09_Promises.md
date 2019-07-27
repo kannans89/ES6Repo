@@ -81,7 +81,7 @@ Promises chaining can be used when we have a sequence of asynchronous tasks to b
 
 ### Illustration
 
-In the below example `add_positivenos_async()` function adds two numbers asynchronously and rejects if negative values are passed.The result from first call to `add_positivenos_async(10,20)` is 30 , it is used to chain next call which is `add_positivenos_async(30,30)`. The result from the previous asynchronous function call is passed as parameter during the subsequent function calls.Note each `then()` method have a `return` statement.
+In the below example add_positivenos_async() function adds two numbers asynchronously and rejects if negative values are passed. The result from the current asynchronous function call is passed as parameter to the subsequent function calls.Note each `then()` method have a `return` statement.
 
 ```html
  
@@ -129,13 +129,17 @@ Some common used methods of the promise object are :
 
 
 ## promise.all()
+This method can be useful for aggregating the results of multiple promises.
 
 ### Syntax
+```
+Promise.all(iterable);
+```
+where, *iterable* is an iterable object. E.g. Array
 
 ### Illustration 
 
-The below example executes an array of asynchronous  operations `[add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)]`.
-When all the operations are completed the promise is fully resolved.
+The below example executes an array of asynchronous  operations `[add_positivenos_async(10,20),add_positivenos_async(30,40),add_positivenos_async(50,60)]`.When all the operations are completed the promise is fully resolved.
 
 ```html
  <script>
@@ -182,8 +186,12 @@ all add operations done
 ```
 
 ## promise.race()
-
+This function takes an array of promises and returns the first promise that is settled.
 ### Syntax
+```
+Promise.race(iterable)
+```
+where, *iterable* is an iterable object. E.g. Array
 
 ### Illustration
 
