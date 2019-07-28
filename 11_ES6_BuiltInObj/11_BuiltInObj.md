@@ -313,6 +313,7 @@ Some popular methods added to the Math object in ES6 are:
 
 ### Math.sign()
 Returns the sign of a number, indicating whether the number is positive, negative or zero
+
 **Syntax**
 ```
 Math.sign( x ) ;     
@@ -346,6 +347,7 @@ NaN
 
 ### Math.trunc()
 Returns the integer part of a number by removing any fractional digits
+
 **Syntax**
 ```
 Math.trunc( x ) ;      
