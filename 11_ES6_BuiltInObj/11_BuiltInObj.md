@@ -37,7 +37,8 @@ console.log(company.startsWith('orial',3)) // 3 is index
 The output of the above code is: 
 
 ```
-
+true
+true
 ```
 
 ### String.prototype.endsWith()
@@ -65,8 +66,9 @@ where,
 
 The output of the above code  is :
 
-```js
-
+```
+true
+true
 ```
 
 ### String.prototype.includes()
@@ -94,9 +96,10 @@ console.log(company.includes('orial',4))
 The output of the above code is : 
 
 ```
+true
+false
 
 ```
-
 
 ### String.prototype.repeat()
 Constructs and returns a new string which contains the specified number of copies of the string on which it was called, concatenated together
