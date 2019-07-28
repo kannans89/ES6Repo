@@ -2,7 +2,7 @@
 
 ## String extension
 
-Some popular methods added to the String object are:
+Some popular methods added to the String object in ES6 are:
 
 
 |#Sr.No |  method    | description|
@@ -128,7 +128,10 @@ Kiran-Kiran-Kiran-
 
 ## Regex extensions
 
-In a regular expression eg: `/[A-Z]/g` the beginning and ending `/` are called delimiters.Anything after the closing delimiter is called a modifier.ES6 adds a new modifier `/g` where g stands for global .This match all instances of the pattern in a string, not just one.
+In a regular expression eg: `/[A-Z]/g` the beginning and ending `/` are called delimiters.Anything after the closing delimiter is called a modifier.ES6 adds a new modifier `/g` where g stands for global .This match all instances of the pattern in a string, not just one. 
+
+### Illustration
+The following example searches and returns all upper case characters in the string.
 
 ```html
    <script>
@@ -141,10 +144,14 @@ In a regular expression eg: `/[A-Z]/g` the beginning and ending `/` are called d
 
 ```
 
-ouput: 
+The output of the above code is: 
 `["J", "J", "F", "W", "F"]`
 
-Following example shows do a case insensitive global match.The example replaces `fun` with `enjoyable`,ignoring the case.
+Regular expression searches  are case-sensitive. To turn-off case-sensitivity, use the `/i` modifier.
+
+### Illustration
+
+The following example performs a case insensitive global match.The example replaces `fun` with `enjoyable`.
 
 ```html
  <script>
@@ -160,7 +167,7 @@ Following example shows do a case insensitive global match.The example replaces 
  
 ```
 
-output:
+The output of the above code is:
 
 ```
 Javascript is  enjoyable to Work , very enjoyable 
@@ -170,6 +177,8 @@ Javascript is  fun to Work , very Fun
 
 ## Number
 
+Some popular methods added to the Number object in ES6 are:
+
 |Sr.No |  method    | description|
 |:----:|:----------|:-------|
 | 1 |   Number.isFinite(value)  |  method determines whether the passed value is a finite number.Returns true/false
@@ -177,62 +186,121 @@ Javascript is  fun to Work , very Fun
 | 3 |  Number.parseFloat(string) | A floating point number parsed from the given value. If the value cannot be converted to a number, NaN is returned.
 | 4 |  Number.parseInt(string,[ radix]) | method parses a string argument and returns an integer of the specified radix or base.
 
-```html
-   <script>
-        console.log(Number.isFinite(Infinity))//false
-        console.log(Number.isFinite(-Infinity))//false
-        console.log(Number.isFinite(NaN))//false
 
-        console.log(Number.isFinite(123))//true
-        console.log(Number.isFinite('123')) // evaluates to false
+### Number.isFinite
+Determines whether the passed value is a finite number.Returns true/false
 
-        console.log(isFinite('123')) // evaluates to true,global function
+**Syntax**
+```
+let res = Number.isFinite(value);
+```
+*value* to be tested for finiteness.
 
-        console.log(Number.isNaN('123'))//false
-        console.log(Number.isNaN(NaN))//true
-        console.log(Number.isNaN(0/0))//true
+**Illustration**
+```
+<script>
+console.log(Number.isFinite(Infinity))//false
+console.log(Number.isFinite(-Infinity))//false
+console.log(Number.isFinite(NaN))//false
+console.log(Number.isFinite(123))//true
+console.log(Number.isFinite('123')) // evaluates to false
+console.log(isFinite('123')) // evaluates to true,global function
+</script>
+
+```
+The output of the above code is : 
+
+```
+false
+false
+false
+true
+false
+true
+```
+
+### Number.isNaN
+Returns true if the given value is NaN and its type is Number; otherwise, false
+
+**Syntax**
+```
+var res = Number.isNaN(value);
+````
+where *value* is the number to determine if it is a NaN
+
+**Illustration**
+```
+<script>
+console.log(Number.isNaN('123'))//false
+console.log(Number.isNaN(NaN))//true
+console.log(Number.isNaN(0/0))//true
 
 </script>
 
 ```
-output is :
-
- ```
-false
-false
-false
-true
-false
-true
-false
-true
-true
-
- ```
-Following shows example to use `parseFloat()` and `parseInt()`
-```html
- <script>
-
-       console.log(Number.parseFloat('10.3meters'));
-       console.log(Number.parseFloat('abc10.3xyz'));
-
-       console.log(Number.parseInt('10meters'))
-       console.log(Number.parseInt('abc10meters'))
-
-
- </script>
+The output of the above code is : 
 
 ```
-output is :
+false
+true
+true
+
+```
+
+### Number.parseFloat
+A floating point number parsed from the given value. If the value cannot be converted to a number, NaN is returned.
+
+**Syntax**
+```
+Number.parseFloat(string)
+````
+where *string* is the value parse
+
+**Illustration**
+```
+<script>
+console.log(Number.parseFloat('10.3meters'));
+console.log(Number.parseFloat('abc10.3xyz'));
+</script>
+
+```
+The output of the above code is : 
 
 ```
 10.3
 NaN
+```
+
+
+### Number.parseInt
+Parses a string argument and returns an integer of the specified radix or base.
+
+**Syntax**
+```
+Number.parseInt(string,[ radix ])
+````
+where, 
+*string* is the value to parse
+*radix* is an integer between 2 and 36 that represents the base
+
+**Illustration**
+```
+ <script>
+       console.log(Number.parseInt('10meters'))
+       console.log(Number.parseInt('abc10meters'))
+ </script>
+
+```
+The output of the above code is : 
+
+```
 10
 NaN
+
 ```
 
 ## Math
+Some popular methods added to the Math object in ES6 are:
 
 |Sr.No |  method    | description|
 |:----:|:----------|:-------|
@@ -240,14 +308,51 @@ NaN
 | 2 |   Math.trunc()  |  function returns the integer part of a number by removing any fractional digits.
 
 
+### Math.sign()
+Returns the sign of a number, indicating whether the number is positive, negative or zero
+**Syntax**
+```
+Math.sign( x ) ;     
+
+```
+X − represents a number
+
+**Illustration**
+```
+<script>
+        
+         console.log(Math.sign(-Infinity)) //       console.log(Math.sign(-10)) // -1
+         console.log(Math.sign(0)) // 0
+         console.log(Math.sign(Infinity)) // 1
+         console.log(Math.sign(10)) // 1
+         console.log(Math.sign('N')) // NaN
+        
+    </script>
+
+```
+
+The output of the above code is :
+```
+-1
+0
+1
+1
+NaN
+```
+
+
+### Math.trunc()
+Returns the integer part of a number by removing any fractional digits
+**Syntax**
+```
+Math.trunc( x ) ;      
+
+```
+X − represents a number
+
+**Illustration**
 ```html
  <script>
-        
-        console.log(Math.sign(-Infinity)) //       console.log(Math.sign(-10)) // -1
-        console.log(Math.sign(0)) // 0
-        console.log(Math.sign(Infinity)) // 1
-   console.log(Math.sign(10)) // 1
-     console.log(Math.signN)) // NaN
         console.log(Math.trunc(-3.5)) // -3
         console.log(Math.trunc(-3.6)) // -3
         console.log(Math.trunc(3.5)) // 3
@@ -256,15 +361,10 @@ NaN
 
 ```
 
-output is shown below:
+The output of the above code is :
 
 ```js
--1
--1
-0
-1
-1
-NaN
+
 -3
 -3
 3
@@ -279,11 +379,24 @@ NaN
 | 2 |   entries()  |  method returns a new Array Iterator object that contains the key/value pairs for each index in the array.
 | 3 |   find()  |  method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
 | 4 |   fill()  |   method fills all the elements of an array from a start index to an end index  with a static value. It returns the modified array.
-| 5 |   Array.from()  |  method creates a shallow copy from an array like or iterable object.
-| 6 |   Array.of()  |  method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
+| 5 |   Array.of()  |  method creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments.
+| 6 |   Array.from()  |  method creates a shallow copy from an array like or iterable object.
 
 
-**copyWithin**
+
+### Array.copyWithin
+Shallow copies part of an array to another location in the same array and returns it without modifying its length.
+
+**Syntax**
+```
+arr.copyWithin(target[, start[, end]])
+```
+where,
+*target*: Zero-based index at which to copy the sequence to. If negative, target will be counted from the end
+*start*: is an optional parameter. Zero-based index at which to start copying elements from. If negative, start will be counted from the end. If start is omitted, copyWithin will copy from index 0.
+*end*: is an optional parameter. Zero-based index at which to end copying elements from. copyWithin copies up to but not including end. If negative, end will be counted from the end.If end is omitted, copyWithin will copy until the last index
+
+**Illustration**
 
 ```html
  <script>
@@ -296,14 +409,22 @@ NaN
 
 ```
 
-output is :
+The output is :
 
 ```js
  [30, 40, 30, 40, 50, 60]
  [30, 40, 50, 60, 50, 60]
 ```
 
-**entries**
+### Array.entries
+Returns a new Array Iterator object that contains the key/value pairs for each index in the array
+
+**Syntax**
+```
+array.entries()
+```
+
+**Illustration**
 
 ```html
   <script>
@@ -318,7 +439,7 @@ output is :
   </script>
 ```
 
-output is :
+The output is given below :
 
 ```js
 7.5
@@ -328,8 +449,22 @@ output is :
 
 ```
 
-**find**
+### find
+Returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
+**Syntax**
+```
+arr.find(callback(element[, index[, array]])[, thisArg])
 
+```
+where,
+callback :Function to execute on each value in the array, taking three arguments:
+        -element :The current element being processed in the array.
+        - index : This is optional;refers to the index of the current element being processed in the array.
+        - array : This is optional;The array on which find was called.
+
+thisArg: This is optional.Optional object to use as this when executing the  callback
+
+**Illustration**
  ```html
    <script> 
         //find
@@ -343,10 +478,25 @@ output is :
     </script>
  ```
 
- output:`{name: "Books", quantity: 10}`
+ The output is given below :
+
+ `{name: "Books", quantity: 10}`
 
 
-**fill**
+### fill
+
+Fills all the elements of an array from a start index to an end index  with a static value. It returns the modified array.
+
+**Syntax**
+```
+arr.fill(value[, start[, end]])
+```
+where,
+*value* :Value to fill an array.
+*start*: This is optional;Start index, defaults to 0.
+*end* :This is optional: End index, defaults to this.length.
+
+**Illustration**
 
   ```html
     <script>
@@ -363,7 +513,7 @@ output is :
 
   ```
 
-  output is:
+ The output is given below :
 
   ```js
 [10, 0, 0, 40]
@@ -372,18 +522,31 @@ output is :
 
   ```
 
-  **Array.of**
+### Array.of
 
-  ```ht   <script>
+Creates a new Array instance from a variable number of arguments, regardless of number or type of the arguments
+
+**Syntax**
+```
+Array.of(element0[, element1[, ...[, elementN]]])
+```
+elementN: Elements of which to create the array.
+
+**Illustration
+
+  ```html
+<script>
          
         //Array.of
-    console.log(Array.of(10))      console.log(Array.of(10,20,30)) 
+        console.log(Array.of(10))      
+        console.log(Array.of(10,20,30)) 
        console.log(Array(3))
        console.log(Array(10,20,30))
         
      </script>
   ```
- output is :
+  
+ The output is given below :
 
    ```js
   [10]
@@ -394,6 +557,19 @@ output is :
    ```
 
 **Array.from**
+Creates a shallow copy from an array like or iterable object
+
+**Syntax**
+```
+Array.from(arrayLike[, mapFn[, thisArg]])
+
+```
+where,
+*arrayLike*: An array-like or iterable object to convert to an array.
+*mapFn*: This an optional parameter.Map function to call on every element of the array.
+*thisArg*: this is an optional parameter.Value to use as this when executing mapFn.
+
+**Illustration**
 
 ```html
  <script>
@@ -423,7 +599,7 @@ output is :
 
  ```
  
- output is :
+The output is given below :
 
  ```js
  {0: 101, 1: "kannan", length: 2}
@@ -444,26 +620,53 @@ output is :
 | 2| Object.setPrototypeOf()| method sets the prototype of a specified object to another object or null.
 | 3| Object.assign()| method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
 
+### Object.is
+Determines whether two values are the same value
+
+**Syntax**
+```
+Object.is(value1, value2);
+
+```
+where,
+*value1*:The first value to compare.
+*value2*:The second value to compare.
+
+**Illustration**
+
 ```html
    <script>
-       //Object.is()
 
-         let emp1 ={ename:'Prijin'}
+           let emp1 ={ename:'Prijin'}
          let emp2 ={ename:'Prijin'}
 
          console.log(Object.is(emp1.ename,emp2.ename))
    </script>
 ```
 
-output: `true`
+The output of the above code is 
 
-**Object.setPrototypeOf**
+```
+true
+```
 
+
+### Object.setPrototypeOf
+Sets the prototype of a specified object to another object or null
+
+**Syntax**
+```
+Object.setPrototypeOf(obj, prototype)
+
+```
+where,
+*obj*:The object which is to have its prototype set
+*prototype*:The object's new prototype (an object or null)
+
+**Illustration**
 ```html
  <script>
         
-
-        //Object.setPrototypeOf(destination,source)
         let emp ={name:'A',location:'Mumbai',basic:5000}
         let mgr = {name:'B'}
         console.log(emp.__proto__ == Object.prototype)
@@ -481,7 +684,7 @@ output: `true`
 
 ```
 
-output is:
+The output of the above code is:
 
 ```js
 true
@@ -493,7 +696,20 @@ Mumbai 5000
 
 ```
 
- **object.assign**
+### Object.assign
+Copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.
+
+**Syntax**
+```
+ Object.assign(target, ...sources)
+ 
+```
+where,
+*target*: The target object.
+*sources*: The source object(s).
+
+**Illustration**
+
 ```html
  <script>
    
@@ -508,5 +724,10 @@ Mumbai 5000
 
 ```
 
-output is : `obj 1 {x: 10, y: 20, z: 30}`
+The output of the above code is 
+
+```
+obj 1 {x: 10, y: 20, z: 30}
+
+```
 
