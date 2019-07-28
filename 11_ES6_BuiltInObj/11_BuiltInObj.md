@@ -5,7 +5,7 @@
 Some popular methods added to the String object in ES6 are:
 
 
-|#Sr.No |  method    | description|
+|#Sr.No |  Method    | Description|
 |:----:|:----------|:-------|
 | 1 |   str.startsWith(searchString[, position])  | determines whether a string begins with the characters of a specified string.Returns true or false
 | 2 |   str.endsWith(searchString[, length]) |  determines whether a string ends with the characters of a specified string.Returns true/false
