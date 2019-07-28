@@ -452,7 +452,7 @@ The output is given below :
 
 ```
 
-### find
+### Array.find
 Returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.
 **Syntax**
 ```
@@ -486,7 +486,7 @@ thisArg: This is optional.Optional object to use as this when executing the  cal
  `{name: "Books", quantity: 10}`
 
 
-### fill
+### Array.fill
 
 Fills all the elements of an array from a start index to an end index  with a static value. It returns the modified array.
 
@@ -559,7 +559,7 @@ elementN: Elements of which to create the array.
 
    ```
 
-**Array.from**
+### Array.from
 Creates a shallow copy from an array like or iterable object
 
 **Syntax**
